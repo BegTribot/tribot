@@ -9,7 +9,7 @@ export default function TableCommonCells({script, rank, username}) {
             <TableCell align="center">{rank}</TableCell>
             {username !== '*' &&
             <TableCell align="left"><Link target={'_blank'}
-                                          href={`https://fast-brook-30426.herokuapp.com/api/scripts/signatures/${scriptLink}/` + username + '.png'}>{username}</Link></TableCell>
+                                          href={`https://dry-journey-46591.herokuapp.com/api/scripts/signatures/${scriptLink}/` + username + '.png'}>{username}</Link></TableCell>
             }
             {username === '*' && <TableCell align="left">******</TableCell>}
         </>

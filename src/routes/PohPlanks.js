@@ -22,9 +22,11 @@ function PohPlanks() {
         <div>
             <Script name={'Poh Planks'} id={'poh-planks'} thread={'83668-beg-poh-planks-500k-1mh-muling-restocking'}>
                 <Box margin={2}>
-                    Turns logs into planks at the player-owned house by sending your Demon Butler to the sawmil. Banks
-                    at lumbridge or camelot PvP bank chests.
-                    Up to 7k planks/hour and 1m gp/hour depending on settings, your connection and prices.
+                    Turns logs into planks at the player-owned house by sending your
+                    <a href="https://oldschool.runescape.wiki/w/Demon_butler#Services">Demon Butler</a>
+                    to the sawmill.
+                    Supports camelot and lumbridge pvp banks, castle wars, ferox enclave, wintertodt and barbarian outpost banks.
+                    Up to 7k planks/hour and 1.5m gp/hour depending on settings, your connection and prices.
                 </Box>
                 <Box margin={2}>
                     <Typography variant="h6" gutterBottom>
@@ -37,7 +39,7 @@ function PohPlanks() {
                             Support to all plank types (Regular/Oak/Teak/Mahogany).
                         </li>
                         <li>
-                            Support to Lumbridge/Camelot PvP chest banks.
+                            Support to Camelot and Lumbridge PvP, Castle Wars, Ferox Enclave, Wintertodt and Barbarian outpost banks.
                         </li>
                         <li>
                             Automated muling.
@@ -55,7 +57,10 @@ function PohPlanks() {
                             Death recovery.
                         </li>
                         <li>
-                            Mouse movement anticipation for higher efficiency.
+                            Ability to move house location and hire a demon butler.
+                        </li>
+                        <li>
+                            Mouse movement anticipation for higher planks/h.
                         </li>
                         <li>
                             Anti-pk features such as setting private status to offline, detecting portal miss clicks as

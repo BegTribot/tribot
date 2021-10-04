@@ -110,7 +110,7 @@ export default function AppDashboard() {
                     <div className={classes.sectionDesktop}>
                         <IconButton
                             edge="end"
-                            href="https://begtribot.github.io/osrs-map"
+                            href="https://begosrs.github.io/osrs-map"
                             target="_blank"
                             color="inherit">
                             <HtmlTooltip
