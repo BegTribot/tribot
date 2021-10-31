@@ -44,3 +44,7 @@ hr.solid {
     margin-left: auto;
     margin-right: auto;
 }
+
+.react-multi-carousel-dot--active button {
+    background: #ff8f00 !important;
+}
