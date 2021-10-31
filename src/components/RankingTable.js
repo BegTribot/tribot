@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function RankingTable({name, id, url, free, disabled=false, header, statsToRows}) {
+export default function RankingTable({name, id, url, free=false, disabled=false, headers, statsToRows}) {
     const classes = useStyles();
 
     const [isFetching, setFetching] = React.useState(true);
@@ -55,7 +55,7 @@ export default function RankingTable({name, id, url, free, disabled=false, heade
                 <TableHead>
                     <TableRow>
                         <TableCommonHeaders/>
-                        {header}
+                        {headers.map((stat, index) => <TableCell key={index} align="center">{stat}</TableCell>)}
                         <TableCell/>
                     </TableRow>
                 </TableHead>

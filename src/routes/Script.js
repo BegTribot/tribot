@@ -6,6 +6,9 @@ import {withRouter} from 'react-router';
 import {Breadcrumbs} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
+import ScriptDescription from "../components/ScriptDescription";
+import ScriptFeatures from "../components/ScriptFeatures";
+import Carousel from 'react-multi-carousel';
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -14,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     viewRankingButton: {
         position: 'absolute',
-        right: '240px',
+        right: '210px',
         top: '73px'
     },
     threadButton: {
@@ -35,8 +38,15 @@ const convertToKebabCase = (string) => {
     return string.replace(/\s+/g, '-').toLowerCase();
 }
 
+const responsive = {
+    allDevices: {
+        breakpoint: { max: 100000, min: 0 },
+        items: 1,
+    }
+};
+
 function Script(props) {
-    const {name, free, id, thread, disabled, noRanking, children} = props;
+    const {name, free, id, thread, disabled, noRanking, description, features, demo, executions, children} = props;
     const classes = useStyles();
 
     const link = convertToKebabCase(name);
@@ -46,7 +56,7 @@ function Script(props) {
             <main className={classes.content}>
                 <Container maxWidth="lg" className={classes.container}>
                     <Breadcrumbs aria-label="breadcrumb" className={classes.title}>
-                        <Typography color="textPrimary">{name}</Typography>
+                        <Typography color="textPrimary">BEG {name}</Typography>
                     </Breadcrumbs>
                     <Box margin={2}>
                         {!free &&
@@ -64,9 +74,10 @@ function Script(props) {
                             Activate
                         </Button>}
                     </Box>
-                    {(noRanking === undefined || !noRanking) && <Button variant="outlined"
-                            className={classes.viewRankingButton}
-                            href={process.env.PUBLIC_URL + "/scripts/" + link + "/ranking"}>
+                    {(noRanking === undefined || !noRanking)
+                    && <Button variant="outlined"
+                               className={classes.viewRankingButton}
+                               href={process.env.PUBLIC_URL + "/scripts/" + link + "/ranking"}>
                         View ranking
                     </Button>}
                     <Button variant="outlined" className={classes.threadButton}
@@ -75,6 +86,36 @@ function Script(props) {
                             disabled={disabled}>
                         View thread on TriBot
                     </Button>
+                    <ScriptDescription description={description}>
+                    </ScriptDescription>
+                    <hr className="solid"/>
+                    <ScriptFeatures features={features}/>
+                    {demo && <Box margin={2}>
+                        <Typography variant="h6" gutterBottom>
+                            Demo
+                        </Typography>
+                        <img src={demo} alt="loading..."/>
+                    </Box>}
+                    {executions && <Box margin={2}>
+                        <Carousel
+                            ssr
+                            swipeable={false}
+                            draggable={false}
+                            showDots
+                            responsive={responsive}
+                            autoPlay
+                            arrows={false}
+                            autoPlaySpeed={5000}
+                            transitionDuration={500}
+                            containerClass="carousel-container"
+                            removeArrowOnDeviceType={["tablet", "mobile"]}
+                        >
+                            {executions.map((execution, index) => <img className={'carousel-img'} key={index} src={execution} alt={'loading...'}/>)}
+                        </Carousel>
+                        {/*<Carousel fullHeightHover={false}>
+                            {executions.map((execution, index) => <img key={index} src={execution} alt={'loading...'}/>)}
+                        </Carousel>*/}
+                    </Box>}
                     {children}
                 </Container>
             </main>

@@ -232,7 +232,7 @@ function Home() {
                             {name: "Magic", completed: false}, {name: "Runecraft", completed: false},
                             {name: "Hitpoints", completed: false}, {name: "Crafting", completed: false},
                             {name: "Mining", completed: false}, {name: "Smithing", completed: false},
-                            {name: "Fishing", completed: false}, {name: "Cooking", completed: false},
+                            {name: "Fishing", completed: false}, {name: "Cooking", completed: true},
                             {name: "Firemaking", completed: false}, {name: "Woodcutting", completed: false},
                             {name: "Agility", completed: false}, {name: "Herblore", completed: false},
                             {name: "Thieving", completed: false}, {name: "Fletching", completed: false},

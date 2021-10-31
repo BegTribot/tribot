@@ -9,6 +9,10 @@ import CorporealBeastRanking from "../routes/CorporealBeastRanking";
 import MuleRanking from "../routes/MuleRanking";
 import PohPlanksRanking from "../routes/PohPlanksRanking";
 import Utilities from "../routes/Utilities";
+import Combat from "../routes/Combat";
+import CombatRanking from "../routes/CombatRanking";
+import Cooking from "../routes/Cooking";
+import CookingRanking from "../routes/CookingRanking";
 
 export default function AppRouter() {
     return (
@@ -21,11 +25,23 @@ export default function AppRouter() {
                 <Route exact path={"/scripts/corporeal-beast/ranking"}>
                     <CorporealBeastRanking/>
                 </Route>
+                <Route exact path={"/scripts/combat"}>
+                    <Combat/>
+                </Route>
+                <Route exact path={"/scripts/combat/ranking"}>
+                    <CombatRanking/>
+                </Route>
                 <Route exact path={"/scripts/poh-planks"}>
                     <PohPlanks/>
                 </Route>
                 <Route exact path={"/scripts/poh-planks/ranking"}>
                     <PohPlanksRanking/>
+                </Route>
+                <Route exact path={"/scripts/cooking"}>
+                    <Cooking/>
+                </Route>
+                <Route exact path={"/scripts/cooking/ranking"}>
+                    <CookingRanking/>
                 </Route>
                 <Route exact path={"/scripts/mule"}>
                     <Mule/>

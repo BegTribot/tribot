@@ -16,3 +16,31 @@ code {
 .MuiTableCell-root .MuiTableCell-body .MuiTableCell-sizeSmall {
     border-bottom: transparent !important;
 }
+
+a {
+    color: #ff8f00;
+}
+
+hr.solid {
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+.feature-title {
+    color: #ff8f00;
+}
+
+/*
+.makeStyles-root-1 {
+    overflow: auto !important;
+}*/
+
+
+.carousel-container {
+    max-width: calc(100vw - 400px);
+}
+
+.carousel-img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}

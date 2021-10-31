@@ -25,13 +25,6 @@ interface Unique {
 }
 
 function CorporealBeastRanking() {
-    const header = <>
-        <TableCell align="center">Kills</TableCell>
-        <TableCell align="center">Loot</TableCell>
-        <TableCell align="center">Profit</TableCell>
-        <TableCell align="center">Runtime</TableCell>
-    </>;
-
     const statToRow = (stat: CorporealBeastStat) => (
         <>
             <TableCell align="center">{Utils.toKmb(stat.kills, true, true)}</TableCell>
@@ -41,7 +34,7 @@ function CorporealBeastRanking() {
         </>
     );
 
-    const subHeader = <>
+    const subHeaders = <>
         <TableCell align="center">Item</TableCell>
         <TableCell align="center">Quantity</TableCell>
         <TableCell align="center">Value</TableCell>
@@ -55,17 +48,17 @@ function CorporealBeastRanking() {
         </TableRow>
     ));
 
-    const statsToRows = (stats: CorporealBeastStat[]) => stats.map((stat: CorporealBeastStat, index: number) => (
-        <>
-            <Row rank={index + 1} script={'beg mule'} stat={stat} statToRow={statToRow}
-                 subHeader={stat.uniques.length ? subHeader : undefined} statToSubRow={stat.uniques.length ? statToSubRow : undefined}/>
-        </>
-    ));
+    const statsToRows = (stats: CorporealBeastStat[]) => stats.map((stat: CorporealBeastStat, index: number) =>
+        <Row rank={index + 1} script={'beg corporeal beast'} stat={stat} statToRow={statToRow}
+                 subHeader={stat.uniques.length ? subHeaders : undefined} statToSubRow={stat.uniques.length ? statToSubRow : undefined}/>
+    );
 
     return (
-        <RankingTable name={'Corporeal Beast'} id={'corporeal-beast'} free={false}
+        <RankingTable name={'Corporeal Beast'}
+                      id={'corporeal-beast'}
                       url='/scripts/stats/beg corporeal beast'
-                      header={header} statsToRows={statsToRows}/>
+                      headers={['Kills', 'Loot', 'Profit', 'Runtime']}
+                      statsToRows={statsToRows}/>
     );
 }
 
