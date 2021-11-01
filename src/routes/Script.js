@@ -31,7 +31,10 @@ const useStyles = makeStyles((theme) => ({
     container: {
         marginTop: '64px',
         paddingTop: '10px'
-    }
+    },
+    highlightedButton: {
+        border: '1px solid rgb(102, 187, 106)',
+    },
 }));
 
 const convertToKebabCase = (string) => {
@@ -63,14 +66,16 @@ function Script(props) {
                         <Button variant="outlined"
                                 href={"https://tribot.org/collections/osrs-scripts/products/beg-" + id}
                                 target={"_blank"}
-                                disabled={disabled}>
+                                disabled={disabled}
+                                className='highlighted-button'>
                             Purchase
                         </Button>}
                         {free &&
                         <Button variant="outlined"
                                 href={'https://repo.tribot.org/script/id/' + id}
                                 target={"_blank"}
-                                disabled={disabled}>
+                                disabled={disabled}
+                                className='highlighted-button'>
                             Activate
                         </Button>}
                     </Box>

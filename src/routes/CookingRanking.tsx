@@ -36,7 +36,7 @@ function CookingRanking() {
                       id={'1760'}
                       free
                       url='/scripts/stats/beg cooking'
-                      headers={['Experience', 'Levels', 'Amount', 'Raw value', 'Cooked value']}
+                      headers={['Experience', 'Levels', 'Amount', 'Raw value', 'Cooked value', 'Runtime']}
                       statsToRows={statsToRows}/>
     );
 }

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         right: '42px',
         top: '71px'
-    },
+    }
 }));
 
 const convertToKebabCase = (string) => {
@@ -48,17 +48,18 @@ function Ranking(props) {
                         <Typography color="textPrimary">Ranking</Typography>
                     </Breadcrumbs>
                     {!free &&
-                    <Button variant="outlined" className={classes.button}
+                    <Button variant="outlined" className={classes.button + ' highlighted-button'}
                             href={"https://tribot.org/collections/osrs-scripts/products/beg-" + id}
                             target={"_blank"}
                             disabled={disabled}>
                         Purchase
                     </Button>}
                     {free &&
-                    <Button variant="outlined" className={classes.button}
+                    <Button variant="outlined" className={classes.button + ' highlighted-button'}
                             href={'https://repo.tribot.org/script/id/' + id}
                             target={"_blank"}
-                            disabled={disabled}>
+                            disabled={disabled}
+                            color="success">
                         Activate
                     </Button>}
                     {children}

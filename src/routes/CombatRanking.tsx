@@ -14,22 +14,29 @@ interface CombatStat {
     suppliesValue: number,
     lootValue: number,
     deaths: number,
-    experiences: SkillExperience[]
+    experiences: SkillExperience
 }
 
 interface SkillExperience {
-    skill: string,
-    experience: number
+    attack: number,
+    strength: number,
+    defence: number,
+    ranged: number,
+    magic: number,
+    hitpoints: number,
+    slayer: number
 }
 
 function CombatRanking() {
     const statToRow = (stat: CombatStat) => (
         <>
-            <TableCell align="center">{Utils.toKmb(stat.kills, true, true)}</TableCell>
             <TableCell align="center">{Utils.toKmb(stat.suppliesValue, true, true)}</TableCell>
             <TableCell align="center">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.deaths, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.experiences, true, true)}</TableCell>
+            <TableCell align="center">{Utils.toKmb(stat.experiences.attack, true, true)}</TableCell>
+            <TableCell align="center">{Utils.toKmb(stat.experiences.strength, true, true)}</TableCell>
+            <TableCell align="center">{Utils.toKmb(stat.experiences.defence, true, true)}</TableCell>
+            <TableCell align="center">{Utils.toKmb(stat.experiences.ranged, true, true)}</TableCell>
+            <TableCell align="center">{Utils.toKmb(stat.experiences.magic, true, true)}</TableCell>
             <TableCell align="center">{Utils.msToString(stat.runtime)}</TableCell>
         </>
     );
@@ -42,7 +49,7 @@ function CombatRanking() {
         <RankingTable name={'Combat'}
                       id={'combat-trainer'}
                       url='/scripts/stats/beg combat'
-                      headers={['Kills', 'Supplies used', 'Loot', 'Deaths', 'Experience']}
+                      headers={['Supplies', 'Loot', 'Att.', 'Str.', 'Def.', 'Ranged', 'Magic', 'Runtime']}
                       statsToRows={statsToRows}/>
     );
 }
