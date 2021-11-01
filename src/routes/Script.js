@@ -43,7 +43,7 @@ const convertToKebabCase = (string) => {
 
 const responsive = {
     allDevices: {
-        breakpoint: { max: 100000, min: 0 },
+        breakpoint: {max: 100000, min: 0},
         items: 1,
     }
 };
@@ -115,7 +115,8 @@ function Script(props) {
                             containerClass="carousel-container"
                             removeArrowOnDeviceType={["tablet", "mobile"]}
                         >
-                            {executions.map((execution, index) => <img className={'carousel-img'} key={index} src={execution} alt={'loading...'}/>)}
+                            {executions.map((execution, index) => <img className={'carousel-img'} key={index}
+                                                                       src={execution} alt={'loading...'}/>)}
                         </Carousel>
                         {/*<Carousel fullHeightHover={false}>
                             {executions.map((execution, index) => <img key={index} src={execution} alt={'loading...'}/>)}

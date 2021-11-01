@@ -1,11 +1,9 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
 import * as Utils from "../Utils";
 import RankingTable from "../components/RankingTable";
 import Row from "../components/Row";
-import BorderlessTableCell from "../components/BorderlessTableCell";
 
 interface CombatStat {
     username: string,
@@ -32,17 +30,17 @@ function CombatRanking() {
         <>
             <TableCell align="center">{Utils.toKmb(stat.suppliesValue, true, true)}</TableCell>
             <TableCell align="center">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.experiences.attack, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.experiences.strength, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.experiences.defence, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.experiences.ranged, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.experiences.magic, true, true)}</TableCell>
+            <TableCell align="center">{stat.experiences.attack && Utils.toKmb(stat.experiences.attack, true, true) || 0}</TableCell>
+            <TableCell align="center">{stat.experiences.strength && Utils.toKmb(stat.experiences.strength, true, true) || 0}</TableCell>
+            <TableCell align="center">{stat.experiences.defence && Utils.toKmb(stat.experiences.defence, true, true) || 0}</TableCell>
+            <TableCell align="center">{stat.experiences.ranged && Utils.toKmb(stat.experiences.ranged, true, true) || 0}</TableCell>
+            <TableCell align="center">{stat.experiences.magic && Utils.toKmb(stat.experiences.magic, true, true) || 0}</TableCell>
             <TableCell align="center">{Utils.msToString(stat.runtime)}</TableCell>
         </>
     );
 
     const statsToRows = (stats: CombatStat[]) => stats.map((stat: CombatStat, index: number) => (
-            <Row rank={index + 1} script={'beg combat'} stat={stat} statToRow={statToRow}/>
+        <Row rank={index + 1} script={'beg combat'} stat={stat} statToRow={statToRow}/>
     ));
 
     return (

@@ -33,4 +33,5 @@ function PohPlanksRanking() {
                       statsToRows={statsToRows}/>
     );
 }
+
 export default withRouter(PohPlanksRanking)

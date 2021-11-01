@@ -5,8 +5,6 @@ import TableRow from '@material-ui/core/TableRow';
 import * as Utils from "../Utils";
 import RankingTable from "../components/RankingTable";
 import Row from "../components/Row";
-import {withStyles} from "@material-ui/core/styles";
-import MuiTableCell from "@material-ui/core/TableCell";
 import BorderlessTableCell from "../components/BorderlessTableCell";
 
 interface CorporealBeastStat {
@@ -50,7 +48,8 @@ function CorporealBeastRanking() {
 
     const statsToRows = (stats: CorporealBeastStat[]) => stats.map((stat: CorporealBeastStat, index: number) =>
         <Row rank={index + 1} script={'beg corporeal beast'} stat={stat} statToRow={statToRow}
-                 subHeader={stat.uniques.length ? subHeaders : undefined} statToSubRow={stat.uniques.length ? statToSubRow : undefined}/>
+             subHeader={stat.uniques.length ? subHeaders : undefined}
+             statToSubRow={stat.uniques.length ? statToSubRow : undefined}/>
     );
 
     return (

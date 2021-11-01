@@ -1,4 +1,3 @@
-import {CircularProgress} from "@material-ui/core";
 import React, {useEffect} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import TableHead from "@material-ui/core/TableHead";
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function RankingTable({name, id, url, free=false, disabled=false, headers, statsToRows}) {
+export default function RankingTable({name, id, url, free = false, disabled = false, headers, statsToRows}) {
     const classes = useStyles();
 
     const [isFetching, setFetching] = React.useState(true);
@@ -50,7 +49,7 @@ export default function RankingTable({name, id, url, free=false, disabled=false,
     return <Ranking name={name} id={id} free={free} disabled={disabled}>
         {isFetching && <Loading/>}
         {!isFetching && stats.length === 0 && <EmptyData/>}
-        {!isFetching && stats.length > 0 && <TableContainer component={Paper}  className={classes.tableContainer}>
+        {!isFetching && stats.length > 0 && <TableContainer component={Paper} className={classes.tableContainer}>
             <Table aria-label="collapsible table" size="small" className={classes.table}>
                 <TableHead>
                     <TableRow>
