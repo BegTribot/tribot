@@ -23,6 +23,13 @@ interface Unique {
 }
 
 function CorporealBeastRanking() {
+    const headers = [
+        {id: 'kills', label: 'Kills'},
+        {id: 'loot', label: 'Loot'},
+        {id: 'profit', label: 'Profit'},
+        {id: 'runtime', label: 'Runtime'}
+    ];
+
     const statToRow = (stat: CorporealBeastStat) => (
         <>
             <TableCell align="center">{Utils.toKmb(stat.kills, true, true)}</TableCell>
@@ -56,8 +63,8 @@ function CorporealBeastRanking() {
         <RankingTable name={'Corporeal Beast'}
                       id={'corporeal-beast'}
                       url='/scripts/stats/beg corporeal beast'
-                      headers={['Kills', 'Loot', 'Profit', 'Runtime']}
-                      statsToRows={statsToRows}/>
+                      headers={headers}
+                      dataToRows={statsToRows}/>
     );
 }
 

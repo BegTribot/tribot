@@ -13,6 +13,7 @@ import {SERVER} from "../App";
 import Loading from "./Loading";
 import EmptyData from "./EmptyData";
 import Ranking from "../routes/Ranking";
+import RankingTable2 from "./RankingTable2";
 
 const useStyles = makeStyles((theme) => ({
     tableContainer: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function RankingTable({name, id, url, free = false, disabled = false, headers, statsToRows}) {
+export default function RankingTable({name, id, url, free = false, disabled = false, headers, dataToRows}) {
     const classes = useStyles();
 
     const [isFetching, setFetching] = React.useState(true);
@@ -49,19 +50,22 @@ export default function RankingTable({name, id, url, free = false, disabled = fa
     return <Ranking name={name} id={id} free={free} disabled={disabled}>
         {isFetching && <Loading/>}
         {!isFetching && stats.length === 0 && <EmptyData/>}
-        {!isFetching && stats.length > 0 && <TableContainer component={Paper} className={classes.tableContainer}>
-            <Table aria-label="collapsible table" size="small" className={classes.table}>
-                <TableHead>
-                    <TableRow>
-                        <TableCommonHeaders/>
-                        {headers.map((stat, index) => <TableCell key={index} align="center">{stat}</TableCell>)}
-                        <TableCell/>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {statsToRows(stats)}
-                </TableBody>
-            </Table>
-        </TableContainer>}
+        {!isFetching && stats.length > 0 && <RankingTable2 headers={headers} rows={stats} dataToRows={dataToRows}/>}
     </Ranking>;
 }
+
+/*
+<TableContainer component={Paper} className={classes.tableContainer}>
+    <Table aria-label="collapsible table" size="small" className={classes.table}>
+        <TableHead>
+            <TableRow>
+                <TableCommonHeaders/>
+                {headers.map((stat, index) => <TableCell key={index} align="center">{stat}</TableCell>)}
+                <TableCell/>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            {statsToRows(stats)}
+        </TableBody>
+    </Table>
+</TableContainer>*/

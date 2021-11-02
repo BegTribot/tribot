@@ -13,6 +13,13 @@ interface MuleStat {
 }
 
 function MuleRanking() {
+    const headers = [
+        {id: 'received', label: 'Received'},
+        {id: 'given', label: 'Given'},
+        {id: 'profit', label: 'Profit'},
+        {id: 'runtime', label: 'Runtime'}
+    ];
+
     const statToRow = (stat: MuleStat) => (
         <>
             <TableCell align="center">{toKmb(stat.received, true, true)}</TableCell>
@@ -30,8 +37,8 @@ function MuleRanking() {
                       id='3654'
                       url='/scripts/stats/beg mule'
                       free
-                      headers={['Received', 'Given', 'Profit', 'Runtime']}
-                      statsToRows={statsToRows}/>
+                      headers={headers}
+                      dataToRows={statsToRows}/>
     );
 }
 

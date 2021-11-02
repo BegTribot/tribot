@@ -49,7 +49,7 @@ export default function Routes() {
             <Divider/>
             <Link to="/scripts/corporeal-beast" className={classes.link}>
                 <ListItem button>
-                    <ListItemIcon alignItemsFlexStart>
+                    <ListItemIcon>
                         <Avatar variant="square" src={corporealBeast} className={classes.corporealBeast}/>
                     </ListItemIcon>
                     <ListItemText primary="Corporeal Beast"/>
@@ -59,7 +59,7 @@ export default function Routes() {
             <Divider/>
             <Link to="/scripts/combat" className={classes.link}>
                 <ListItem button>
-                    <ListItemIcon alignItemsFlexStart>
+                    <ListItemIcon>
                         <Avatar variant="square" src={weaponSlot} className={classes.combat}/>
                     </ListItemIcon>
                     <ListItemText primary="Combat"/>
@@ -69,7 +69,7 @@ export default function Routes() {
             <Divider/>
             <Link to="/scripts/poh-planks" className={classes.link}>
                 <ListItem button>
-                    <ListItemIcon alignItemsFlexStart>
+                    <ListItemIcon>
                         <Avatar variant="square" src={demonButler} className={classes.butler}/>
                     </ListItemIcon>
                     <ListItemText primary="Poh Planks"/>
@@ -79,7 +79,7 @@ export default function Routes() {
             <Divider/>
             <Link to="/scripts/cooking" className={classes.link}>
                 <ListItem button>
-                    <ListItemIcon alignItemsFlexStart>
+                    <ListItemIcon>
                         <Avatar variant="square" src={cooking} className={classes.cooking}/>
                     </ListItemIcon>
                     <ListItemText primary="Cooking"/>

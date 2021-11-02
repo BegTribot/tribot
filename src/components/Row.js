@@ -25,15 +25,8 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Row({
-                                script,
-                                rank,
-                                stat,
-                                statToRow,
-                                subTitle = undefined,
-                                subHeader = undefined,
-                                statToSubRow = undefined
-                            }) {
+export default function Row({script, rank, stat, statToRow, subTitle = undefined,
+                                subHeader = undefined, statToSubRow = undefined}) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     return <>

@@ -13,6 +13,12 @@ interface PohPlankStat {
 }
 
 function PohPlanksRanking() {
+    const headers = [
+        {id: 'planks', label: 'Planks'},
+        {id: 'profit', label: 'Profit'},
+        {id: 'runtime', label: 'Runtime'},
+    ];
+
     const statToRow = (stat: PohPlankStat) => (
         <>
             <TableCell align="center">{toKmb(stat.planks, true, true)}</TableCell>
@@ -29,8 +35,8 @@ function PohPlanksRanking() {
         <RankingTable name='Poh Planks'
                       id='poh-planks'
                       url='/scripts/stats/beg poh planks'
-                      headers={['Planks', 'Profit', 'Runtime']}
-                      statsToRows={statsToRows}/>
+                      headers={headers}
+                      dataToRows={statsToRows}/>
     );
 }
 

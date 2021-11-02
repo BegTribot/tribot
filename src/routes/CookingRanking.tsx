@@ -16,6 +16,15 @@ interface CookingStat {
 }
 
 function CookingRanking() {
+    const headers = [
+        {id: 'experience', label: 'Experience'},
+        {id: 'levels', label: 'Levels'},
+        {id: 'amount', label: 'Amount'},
+        {id: 'rawValue', label: 'Raw value'},
+        {id: 'cookedValue', label: 'Cooked value'},
+        {id: 'runtime', label: 'Runtime'},
+    ];
+
     const statToRow = (stat: CookingStat) => (
         <>
             <TableCell align="center">{Utils.toKmb(stat.experience, true, true)}</TableCell>
@@ -36,8 +45,8 @@ function CookingRanking() {
                       id={'1760'}
                       free
                       url='/scripts/stats/beg cooking'
-                      headers={['Experience', 'Levels', 'Amount', 'Raw value', 'Cooked value', 'Runtime']}
-                      statsToRows={statsToRows}/>
+                      headers={headers}
+                      dataToRows={statsToRows}/>
     );
 }
 
