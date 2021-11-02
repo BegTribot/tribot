@@ -13,7 +13,7 @@ import Combat from "../routes/Combat";
 import CombatRanking from "../routes/CombatRanking";
 import Cooking from "../routes/Cooking";
 import CookingRanking from "../routes/CookingRanking";
-import RankingTable2 from "./RankingTable2";
+import SortableTable from "./SortableTable";
 import TableCell from "@material-ui/core/TableCell";
 import * as Utils from "../Utils";
 import Row from "./Row";
@@ -101,7 +101,7 @@ export default function AppRouter() {
                 </Route>
                 <Route exact path={"/table"}>
                     <div style={{marginTop: '100px', marginLeft: '20px'}}>
-                        <RankingTable2 rows={stats} headers={headers} dataToRows={dataToRows}/>
+                        <SortableTable rows={stats} headers={headers} dataToRows={dataToRows}/>
                     </div>
                 </Route>
                 <Route path={"/"}>

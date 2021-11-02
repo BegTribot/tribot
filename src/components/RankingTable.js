@@ -13,7 +13,7 @@ import {SERVER} from "../App";
 import Loading from "./Loading";
 import EmptyData from "./EmptyData";
 import Ranking from "../routes/Ranking";
-import RankingTable2 from "./RankingTable2";
+import SortableTable from "./SortableTable";
 
 const useStyles = makeStyles((theme) => ({
     tableContainer: {
@@ -50,7 +50,7 @@ export default function RankingTable({name, id, url, free = false, disabled = fa
     return <Ranking name={name} id={id} free={free} disabled={disabled}>
         {isFetching && <Loading/>}
         {!isFetching && stats.length === 0 && <EmptyData/>}
-        {!isFetching && stats.length > 0 && <RankingTable2 headers={headers} rows={stats} dataToRows={dataToRows}/>}
+        {!isFetching && stats.length > 0 && <SortableTable headers={headers} rows={stats} dataToRows={dataToRows}/>}
     </Ranking>;
 }
 

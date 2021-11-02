@@ -26,13 +26,13 @@ interface SkillExperience {
 
 function CombatRanking() {
     const headers = [
-        {id: 'loot', label: 'Loot'},
-        {id: 'supplies', label: 'Supplies'},
-        {id: 'attack', label: 'Attack'},
-        {id: 'strength', label: 'Strength'},
-        {id: 'defence', label: 'Defence'},
-        {id: 'ranged', label: 'Ranged'},
-        {id: 'magic', label: 'Magic'},
+        {id: 'lootValue', label: 'Loot'},
+        {id: 'suppliesValue', label: 'Supplies'},
+        {id: 'experiences.attack', label: 'Attack'},
+        {id: 'experiences.strength', label: 'Strength'},
+        {id: 'experiences.defence', label: 'Defence'},
+        {id: 'experiences.ranged', label: 'Ranged'},
+        {id: 'experiences.magic', label: 'Magic'},
         {id: 'runtime', label: 'Runtime'}
     ];
 

@@ -16,10 +16,16 @@ import Tooltip from '@material-ui/core/Tooltip';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 function descendingComparator(a, b, orderBy) {
-    if (b[orderBy] < a[orderBy]) {
+    let aValue = undefined, bValue = undefined;
+    const keys = orderBy.split('.');
+    for (let i = 0; i < keys.length; i++) {
+        aValue = !aValue ? a[keys[i]] : aValue[keys[i]];
+        bValue = !bValue ? b[keys[i]] : bValue[keys[i]];
+    }
+    if (bValue < aValue) {
         return -1;
     }
-    if (b[orderBy] > a[orderBy]) {
+    if (bValue > aValue) {
         return 1;
     }
     return 0;
@@ -83,42 +89,6 @@ EnhancedTableHead.propTypes = {
     rowCount: PropTypes.number.isRequired,
 };
 
-const useToolbarStyles = makeStyles((theme) => ({
-    root: {
-        paddingLeft: theme.spacing(2),
-        paddingRight: theme.spacing(1),
-    },
-    highlight:
-        theme.palette.type === 'light'
-            ? {
-                color: theme.palette.secondary.main,
-                backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-            }
-            : {
-                color: theme.palette.text.primary,
-                backgroundColor: theme.palette.secondary.dark,
-            },
-    title: {
-        flex: '1 1 100%',
-    },
-}));
-
-const EnhancedTableToolbar = () => {
-    const classes = useToolbarStyles();
-    return (
-        <Toolbar>
-            <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-                Nutrition
-            </Typography>
-            <Tooltip title="Filter list">
-                <IconButton aria-label="filter list">
-                    <FilterListIcon/>
-                </IconButton>
-            </Tooltip>
-        </Toolbar>
-    );
-};
-
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -143,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function RankingTable2({headers, rows, dataToRows}) {
+export default function SortableTable({headers, rows, dataToRows}) {
     const classes = useStyles();
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('calories');
@@ -188,32 +158,6 @@ export default function RankingTable2({headers, rows, dataToRows}) {
                                 stableSort(rows, getComparator(order, orderBy)
                                     /*.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)*/
                                 ))}
-
-                            {/*{stableSort(rows, getComparator(order, orderBy))
-                                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                .map((row, index) => {
-                                    return (
-                                        <TableRow>
-                                            {statToRow(index, row)}
-                                        </TableRow>
-                                        <TableRow>
-                                            <TableCell padding="checkbox">
-                                            </TableCell>
-                                            <TableCell component="th" id={labelId} scope="row" padding="none">
-                                                {row.name}
-                                            </TableCell>
-                                            <TableCell align="right">{row.calories}</TableCell>
-                                            <TableCell align="right">{row.fat}</TableCell>
-                                            <TableCell align="right">{row.carbs}</TableCell>
-                                            <TableCell align="right">{row.protein}</TableCell>
-                                        </TableRow>
-                                    );
-                                })}
-                            {emptyRows > 0 && (
-                                <TableRow style={{height: 33 * emptyRows}}>
-                                    <TableCell colSpan={6}/>
-                                </TableRow>
-                            )}*/}
                         </TableBody>
                     </Table>
                 </TableContainer>
