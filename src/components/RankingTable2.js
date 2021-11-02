@@ -169,7 +169,6 @@ export default function RankingTable2({headers, rows, dataToRows}) {
     return (
         <div className={classes.root}>
             <Paper className={classes.paper}>
-                <EnhancedTableToolbar/>
                 <TableContainer>
                     <Table
                         className={classes.table}
