@@ -54,10 +54,10 @@ const dataToRows = data => data.map((d, index) => (
         <TableCell>
             {d.name}
         </TableCell>
-        <TableCell align="right">{d.calories}</TableCell>
-        <TableCell align="right">{d.fat}</TableCell>
-        <TableCell align="right">{d.carbs}</TableCell>
-        <TableCell align="right">{d.protein}</TableCell>
+        <TableCell align="center">{d.calories}</TableCell>
+        <TableCell align="center">{d.fat}</TableCell>
+        <TableCell align="center">{d.carbs}</TableCell>
+        <TableCell align="center">{d.protein}</TableCell>
     </TableRow>
 ));
 
@@ -100,7 +100,9 @@ export default function AppRouter() {
                     <Utilities/>
                 </Route>
                 <Route exact path={"/table"}>
-                    <RankingTable2 rows={stats} headers={headers} dataToRows={dataToRows}/>
+                    <div style={{marginTop: '100px', marginLeft: '20px'}}>
+                        <RankingTable2 rows={stats} headers={headers} dataToRows={dataToRows}/>
+                    </div>
                 </Route>
                 <Route path={"/"}>
                     <Home/>
