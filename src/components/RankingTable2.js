@@ -47,7 +47,7 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
-    headers = [/*{id: 'rank', label: 'Rank'}, {id: 'user', label: 'User'}, */...headers];
+    headers = [{id: 'rank', label: 'Rank'}, {id: 'user', label: 'User'}, ...headers];
     return (
         <TableHead>
             <TableRow>
