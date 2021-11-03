@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tribot/static/css/main.fd6e75f8.chunk.css",
-    "main.js": "/tribot/static/js/main.54f27cd3.chunk.js",
-    "main.js.map": "/tribot/static/js/main.54f27cd3.chunk.js.map",
+    "main.js": "/tribot/static/js/main.ade413e9.chunk.js",
+    "main.js.map": "/tribot/static/js/main.ade413e9.chunk.js.map",
     "runtime-main.js": "/tribot/static/js/runtime-main.ec0edfc9.js",
     "runtime-main.js.map": "/tribot/static/js/runtime-main.ec0edfc9.js.map",
     "static/css/2.9abed3d3.chunk.css": "/tribot/static/css/2.9abed3d3.chunk.css",
@@ -33,6 +33,6 @@
     "static/css/2.9abed3d3.chunk.css",
     "static/js/2.36081ed5.chunk.js",
     "static/css/main.fd6e75f8.chunk.css",
-    "static/js/main.54f27cd3.chunk.js"
+    "static/js/main.ade413e9.chunk.js"
   ]
 }
