@@ -100,8 +100,6 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '25px',
         width: 'calc(100vw - 290px)'
     },
-    table: {
-    },
     visuallyHidden: {
         border: 0,
         clip: 'rect(0 0 0 0)',
@@ -144,7 +142,6 @@ export default function SortableTable({headers, rows, dataToRows}) {
             <Paper className={classes.paper}>
                 <TableContainer className={classes.tableContainer}>
                     <Table
-                        className={classes.table}
                         aria-labelledby="tableTitle"
                         size={'small'}
                         aria-label="enhanced table">
