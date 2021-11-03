@@ -53,16 +53,15 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
-    headers = [{id: 'rank', label: 'Rank'}, {id: 'user', label: 'User'}, ...headers];
+    headers = [{id: 'username', label: 'User'}, ...headers];
     return (
         <TableHead>
             <TableRow>
-                <TableCell padding="checkbox">
-                </TableCell>
-                {headers.map((header, index) => (
+                <TableCell align="center">Rank</TableCell>
+                {headers.map(header => (
                     <TableCell
                         key={header.id}
-                        align={index === 0 ? 'left' : 'center'}
+                        align={'center'}
                         sortDirection={orderBy === header.id ? order : false}>
                         <TableSortLabel
                             active={orderBy === header.id}
