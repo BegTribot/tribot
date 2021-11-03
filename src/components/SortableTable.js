@@ -57,11 +57,11 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
     return (
         <TableHead>
             <TableRow>
-                <TableCell align="center">Rank</TableCell>
+                <TableCell align="left">Rank</TableCell>
                 {headers.map(header => (
                     <TableCell
                         key={header.id}
-                        align={'center'}
+                        align={'left'}
                         sortDirection={orderBy === header.id ? order : false}>
                         <TableSortLabel
                             active={orderBy === header.id}
@@ -96,8 +96,11 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         marginBottom: theme.spacing(2),
     },
+    tableContainer: {
+        marginBottom: '25px'
+    },
     table: {
-        minWidth: 750,
+        width: 'calc(100vw - 280px)'
     },
     visuallyHidden: {
         border: 0,
@@ -139,7 +142,7 @@ export default function SortableTable({headers, rows, dataToRows}) {
     return (
         <div className={classes.root}>
             <Paper className={classes.paper}>
-                <TableContainer>
+                <TableContainer className={classes.tableContainer}>
                     <Table
                         className={classes.table}
                         aria-labelledby="tableTitle"
