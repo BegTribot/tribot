@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
     viewRankingButton: {
         position: 'absolute',
         right: '210px',
-        top: '73px'
+        top: '75px'
     },
     threadButton: {
         position: 'absolute',
-        right: '25px',
-        top: '73px'
+        right: '27px',
+        top: '75px'
     },
     content: {
         flexGrow: 1,
