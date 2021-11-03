@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
     },
     tableContainer: {
         marginBottom: '25px',
-        width: 'calc(100vw - 280px)'
+        width: 'calc(100vw - 300px)'
     },
     table: {
     },
