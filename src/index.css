@@ -59,3 +59,9 @@ hr.solid {
     background-color: rgba(46, 125, 50, 0.04) !important;
     border: 1px solid #2e7d32 !important;
 }
+
+.MuiTableCell-sizeSmall {
+    padding: 6px !important;
+    max-width: 70px;
+    overflow: hidden;
+}

@@ -97,10 +97,10 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
     },
     tableContainer: {
-        marginBottom: '25px'
+        marginBottom: '25px',
+        width: 'calc(100vw - 280px)'
     },
     table: {
-        width: 'calc(100vw - 280px)'
     },
     visuallyHidden: {
         border: 0,
