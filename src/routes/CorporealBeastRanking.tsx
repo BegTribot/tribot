@@ -32,17 +32,17 @@ function CorporealBeastRanking() {
 
     const statToRow = (stat: CorporealBeastStat) => (
         <>
-            <TableCell align="center">{Utils.toKmb(stat.kills, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
-            <TableCell align="center">{Utils.msToString(stat.runtime)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.kills, true, true)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
+            <TableCell align="left">{Utils.msToString(stat.runtime)}</TableCell>
         </>
     );
 
     const subHeaders = <>
-        <TableCell align="center">Item</TableCell>
-        <TableCell align="center">Quantity</TableCell>
-        <TableCell align="center">Value</TableCell>
+        <TableCell align="left">Item</TableCell>
+        <TableCell align="left">Quantity</TableCell>
+        <TableCell align="left">Value</TableCell>
     </>;
 
     const statToSubRow = (stat: CorporealBeastStat) => stat.uniques && stat.uniques.map((unique) => (

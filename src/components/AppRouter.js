@@ -54,10 +54,10 @@ const dataToRows = data => data.map((d, index) => (
         <TableCell>
             {d.name}
         </TableCell>
-        <TableCell align="center">{d.calories}</TableCell>
-        <TableCell align="center">{d.fat}</TableCell>
-        <TableCell align="center">{d.carbs}</TableCell>
-        <TableCell align="center">{d.protein}</TableCell>
+        <TableCell align="left">{d.calories}</TableCell>
+        <TableCell align="left">{d.fat}</TableCell>
+        <TableCell align="left">{d.carbs}</TableCell>
+        <TableCell align="left">{d.protein}</TableCell>
     </TableRow>
 ));
 

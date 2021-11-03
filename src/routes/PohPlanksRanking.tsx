@@ -21,9 +21,9 @@ function PohPlanksRanking() {
 
     const statToRow = (stat: PohPlankStat) => (
         <>
-            <TableCell align="center">{toKmb(stat.planks, true, true)}</TableCell>
-            <TableCell align="center">{toKmb(stat.profit, true, true)}</TableCell>
-            <TableCell align="center">{msToString(stat.runtime, false, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.planks, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.profit, true, true)}</TableCell>
+            <TableCell align="left">{msToString(stat.runtime, false, true)}</TableCell>
         </>
     );
 

@@ -27,12 +27,12 @@ function CookingRanking() {
 
     const statToRow = (stat: CookingStat) => (
         <>
-            <TableCell align="center">{Utils.toKmb(stat.experience, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.levels, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.amount, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.rawValue, true, true)}</TableCell>
-            <TableCell align="center">{Utils.toKmb(stat.cookedValue, true, true)}</TableCell>
-            <TableCell align="center">{Utils.msToString(stat.runtime)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.experience, true, true)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.levels, true, true)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.amount, true, true)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.rawValue, true, true)}</TableCell>
+            <TableCell align="left">{Utils.toKmb(stat.cookedValue, true, true)}</TableCell>
+            <TableCell align="left">{Utils.msToString(stat.runtime)}</TableCell>
         </>
     );
 
