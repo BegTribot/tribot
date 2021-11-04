@@ -25,14 +25,13 @@ interface SkillExperience {
 }
 
 function CombatRanking() {
-    const customComparator = (a: CombatStat, b: CombatStat,
+    const comparator = (a: CombatStat, b: CombatStat,
                               orderBy: keyof CombatStat
                                   | 'experiences.attack'
                                   | 'experiences.strength'
                                   | 'experiences.defence'
                                   | 'experiences.ranged'
                                   | 'experiences.magic') => {
-        console.log(orderBy)
         let aValue, bValue;
         if (orderBy === 'experiences.attack') {
             aValue = a.experiences.attack || 0;
@@ -70,11 +69,11 @@ function CombatRanking() {
     const headers = [
         {id: 'lootValue', label: 'Loot'},
         {id: 'suppliesValue', label: 'Supplies'},
-        {id: 'experiences.attack', label: 'Attack', customComparator: customComparator},
-        {id: 'experiences.strength', label: 'Strength', customComparator: customComparator},
-        {id: 'experiences.defence', label: 'Defence', customComparator: customComparator},
-        {id: 'experiences.ranged', label: 'Ranged', customComparator: customComparator},
-        {id: 'experiences.magic', label: 'Magic', customComparator: customComparator},
+        {id: 'experiences.attack', label: 'Attack'},
+        {id: 'experiences.strength', label: 'Strength'},
+        {id: 'experiences.defence', label: 'Defence'},
+        {id: 'experiences.ranged', label: 'Ranged'},
+        {id: 'experiences.magic', label: 'Magic'},
         {id: 'runtime', label: 'Runtime'}
     ];
 
@@ -97,7 +96,7 @@ function CombatRanking() {
     );
 
     const statsToRows = (stats: CombatStat[], index: number) => stats.map((stat: CombatStat, index: number) => (
-        <Row rank={index + 1} script={'beg combat'} stat={stat} statToRow={statToRow}/>
+        <Row key={index} rank={index + 1} script={'beg combat'} stat={stat} statToRow={statToRow}/>
     ));
 
     return (
@@ -105,6 +104,7 @@ function CombatRanking() {
                       id={'combat-trainer'}
                       url='/scripts/stats/beg combat'
                       headers={headers}
+                      comparator={comparator}
                       dataToRows={statsToRows}/>
     );
 }

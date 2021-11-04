@@ -16,36 +16,28 @@ import Tooltip from '@material-ui/core/Tooltip';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
 function descendingComparator(a, b, orderBy) {
-    let aValue = undefined, bValue = undefined;
-    const keys = orderBy.split('.');
-    for (let i = 0; i < keys.length; i++) {
-        aValue = !aValue ? a[keys[i]] : aValue[keys[i]];
-        bValue = !bValue ? b[keys[i]] : bValue[keys[i]];
-    }
-    if (bValue < aValue) {
+    if (b[orderBy] < a[orderBy]) {
         return -1;
     }
-    if (bValue > aValue) {
+    if (b[orderBy] > a[orderBy]) {
         return 1;
     }
     return 0;
 }
 
-function getComparator(order, orderBy, customComparator) {
+function getComparator(order, orderBy, comparator) {
     return order === 'desc'
-        ? (a, b) => customComparator ? customComparator(a, b, orderBy) : descendingComparator(a, b, orderBy)
-        : (a, b) => customComparator ? -customComparator(a, b, orderBy) : -descendingComparator(a, b, orderBy);
+        ? (a, b) => comparator(a, b, orderBy)
+        : (a, b) => -comparator(a, b, orderBy);
 }
 
 function stableSort(array, comparator) {
-    console.log('array', array)
     const stabilizedThis = array.map((el, index) => [el, index]);
     stabilizedThis.sort((a, b) => {
         const order = comparator(a[0], b[0]);
         if (order !== 0) return order;
         return a[1] - b[1];
     });
-    console.log('sorted array', stabilizedThis.map((el) => el[0]))
     return stabilizedThis.map((el) => el[0]);
 }
 
@@ -113,19 +105,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SortableTable({headers, rows, dataToRows}) {
+export default function SortableTable({headers, comparator = descendingComparator, rows, dataToRows}) {
     const classes = useStyles();
-    const [order, setOrder] = React.useState('des');
-    const [orderBy, setOrderBy] = React.useState('calories');
-    const [customComparator, setCustomComparator] = React.useState(undefined);
+    const [order, setOrder] = React.useState('desc');
+    const [orderBy, setOrderBy] = React.useState('runtime');
     /*const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);*/
 
-    const handleRequestSort = (event, property, customComparator) => {
+    const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
         setOrderBy(property);
-        setCustomComparator(customComparator);
     };
 
     /*const handleChangePage = (event, newPage) => {
@@ -156,7 +146,7 @@ export default function SortableTable({headers, rows, dataToRows}) {
                             rowCount={rows.length}/>
                         <TableBody>
                             {dataToRows(
-                                stableSort(rows, getComparator(order, orderBy, customComparator)
+                                stableSort(rows, getComparator(order, orderBy, comparator)
                                     /*.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)*/
                                 ))}
                         </TableBody>
