@@ -69,11 +69,11 @@ function CombatRanking() {
     const headers = [
         {id: 'lootValue', label: 'Loot'},
         {id: 'suppliesValue', label: 'Supplies'},
-        {id: 'experiences.attack', label: 'Attack'},
-        {id: 'experiences.strength', label: 'Strength'},
-        {id: 'experiences.defence', label: 'Defence'},
-        {id: 'experiences.ranged', label: 'Ranged'},
-        {id: 'experiences.magic', label: 'Magic'},
+        {id: 'experiences.attack', label: 'Attack', customComparator: customComparator},
+        {id: 'experiences.strength', label: 'Strength', customComparator: customComparator},
+        {id: 'experiences.defence', label: 'Defence', customComparator: customComparator},
+        {id: 'experiences.ranged', label: 'Ranged', customComparator: customComparator},
+        {id: 'experiences.magic', label: 'Magic', customComparator: customComparator},
         {id: 'runtime', label: 'Runtime'}
     ];
 
