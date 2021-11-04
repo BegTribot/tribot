@@ -24,7 +24,7 @@ const headers = [
     { id: 'calories', label: 'Calories' },
     { id: 'fat', label: 'Fat (g)' },
     { id: 'carbs', label: 'Carbs (g)' },
-    { id: 'protein', label: 'Protein (g)' },
+    { id: 'protein', label: 'Protein (g)', sort: (v) => 1 },
 ];
 
 const stats = [

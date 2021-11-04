@@ -32,7 +32,7 @@ function CookingRanking() {
             <TableCell align="left">{Utils.toKmb(stat.amount, true, true)}</TableCell>
             <TableCell align="left">{Utils.toKmb(stat.rawValue, true, true)}</TableCell>
             <TableCell align="left">{Utils.toKmb(stat.cookedValue, true, true)}</TableCell>
-            <TableCell align="left">{Utils.msToString(stat.runtime)}</TableCell>
+            <TableCell align="left">{Utils.msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
 

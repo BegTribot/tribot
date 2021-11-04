@@ -23,10 +23,29 @@ interface Unique {
 }
 
 function CorporealBeastRanking() {
+    const customComparator = (a: CorporealBeastStat, b: CorporealBeastStat, orderBy: keyof CorporealBeastStat | 'profit') => {
+        let aValue, bValue;
+        if (orderBy === 'profit') {
+            aValue = a.lootValue - a.suppliesValue;
+            bValue = b.lootValue - b.suppliesValue;
+        }
+        else {
+            aValue = a[orderBy];
+            bValue = b[orderBy];
+        }
+        if (bValue < aValue) {
+            return -1;
+        }
+        if (bValue > aValue) {
+            return 1;
+        }
+        return 0;
+    }
+
     const headers = [
         {id: 'kills', label: 'Kills'},
         {id: 'loot', label: 'Loot'},
-        {id: 'profit', label: 'Profit'},
+        {id: 'profit', label: 'Profit', customComparator: customComparator},
         {id: 'runtime', label: 'Runtime'}
     ];
 
@@ -35,7 +54,7 @@ function CorporealBeastRanking() {
             <TableCell align="left">{Utils.toKmb(stat.kills, true, true)}</TableCell>
             <TableCell align="left">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
             <TableCell align="left">{Utils.toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
-            <TableCell align="left">{Utils.msToString(stat.runtime)}</TableCell>
+            <TableCell align="left">{Utils.msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
 

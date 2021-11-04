@@ -15,18 +15,7 @@ import EmptyData from "./EmptyData";
 import Ranking from "../routes/Ranking";
 import SortableTable from "./SortableTable";
 
-const useStyles = makeStyles((theme) => ({
-    tableContainer: {
-        marginBottom: '25px'
-    },
-    table: {
-        width: 'calc(100vw - 305px)'
-    },
-}));
-
 export default function RankingTable({name, id, url, free = false, disabled = false, headers, dataToRows}) {
-    const classes = useStyles();
-
     const [isFetching, setFetching] = React.useState(true);
     const [stats, setStats] = React.useState([]);
 

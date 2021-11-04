@@ -31,10 +31,10 @@ function descendingComparator(a, b, orderBy) {
     return 0;
 }
 
-function getComparator(order, orderBy) {
+function getComparator(order, orderBy, customComparator) {
     return order === 'desc'
-        ? (a, b) => descendingComparator(a, b, orderBy)
-        : (a, b) => -descendingComparator(a, b, orderBy);
+        ? (a, b) => customComparator ? customComparator(a, b, orderBy) : descendingComparator(a, b, orderBy)
+        : (a, b) => customComparator ? -customComparator(a, b, orderBy) : -descendingComparator(a, b, orderBy);
 }
 
 function stableSort(array, comparator) {
@@ -50,14 +50,14 @@ function stableSort(array, comparator) {
 }
 
 function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
-    const createSortHandler = (property) => (event) => {
-        onRequestSort(event, property);
+    const createSortHandler = (property, customComparator) => (event) => {
+        onRequestSort(event, property, customComparator);
     };
     headers = [{id: 'username', label: 'User'}, ...headers];
     return (
         <TableHead>
             <TableRow>
-                <TableCell align="left">Rank</TableCell>
+                <TableCell align="center">Rank</TableCell>
                 {headers.map(header => (
                     <TableCell
                         key={header.id}
@@ -66,7 +66,7 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
                         <TableSortLabel
                             active={orderBy === header.id}
                             direction={orderBy === header.id ? order : 'asc'}
-                            onClick={createSortHandler(header.id)}>
+                            onClick={createSortHandler(header.id, header.customComparator)}>
                             {header.label}
                             {orderBy === header.id ? (
                                 <span
@@ -115,15 +115,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SortableTable({headers, rows, dataToRows}) {
     const classes = useStyles();
-    const [order, setOrder] = React.useState('asc');
+    const [order, setOrder] = React.useState('des');
     const [orderBy, setOrderBy] = React.useState('calories');
+    const [customComparator, setCustomComparator] = React.useState(undefined);
     /*const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);*/
 
-    const handleRequestSort = (event, property) => {
+    const handleRequestSort = (event, property, customComparator) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
         setOrderBy(property);
+        setCustomComparator(customComparator);
     };
 
     /*const handleChangePage = (event, newPage) => {
@@ -154,7 +156,7 @@ export default function SortableTable({headers, rows, dataToRows}) {
                             rowCount={rows.length}/>
                         <TableBody>
                             {dataToRows(
-                                stableSort(rows, getComparator(order, orderBy)
+                                stableSort(rows, getComparator(order, orderBy, customComparator)
                                     /*.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)*/
                                 ))}
                         </TableBody>
