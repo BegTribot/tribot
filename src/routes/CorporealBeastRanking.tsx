@@ -23,7 +23,7 @@ interface Unique {
 }
 
 function CorporealBeastRanking() {
-    const customComparator = (a: CorporealBeastStat, b: CorporealBeastStat, orderBy: keyof CorporealBeastStat | 'profit') => {
+    const comparator = (a: CorporealBeastStat, b: CorporealBeastStat, orderBy: keyof CorporealBeastStat | 'profit') => {
         let aValue, bValue;
         if (orderBy === 'profit') {
             aValue = a.lootValue - a.suppliesValue;
@@ -45,7 +45,7 @@ function CorporealBeastRanking() {
     const headers = [
         {id: 'kills', label: 'Kills'},
         {id: 'loot', label: 'Loot'},
-        {id: 'profit', label: 'Profit', customComparator: customComparator},
+        {id: 'profit', label: 'Profit'},
         {id: 'runtime', label: 'Runtime'}
     ];
 
@@ -83,6 +83,7 @@ function CorporealBeastRanking() {
                       id={'corporeal-beast'}
                       url='/scripts/stats/beg corporeal beast'
                       headers={headers}
+                      comparator={comparator}
                       dataToRows={statsToRows}/>
     );
 }

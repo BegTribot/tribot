@@ -42,8 +42,8 @@ function stableSort(array, comparator) {
 }
 
 function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
-    const createSortHandler = (property, customComparator) => (event) => {
-        onRequestSort(event, property, customComparator);
+    const createSortHandler = (property) => (event) => {
+        onRequestSort(event, property);
     };
     headers = [{id: 'username', label: 'User'}, ...headers];
     return (
@@ -58,7 +58,7 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
                         <TableSortLabel
                             active={orderBy === header.id}
                             direction={orderBy === header.id ? order : 'asc'}
-                            onClick={createSortHandler(header.id, header.customComparator)}>
+                            onClick={createSortHandler(header.id)}>
                             {header.label}
                             {orderBy === header.id ? (
                                 <span
