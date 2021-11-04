@@ -66,10 +66,3 @@ hr.solid {
     overflow: hidden;
 }
 
-@media (min-width: 600px) {
-    .MuiContainer-root {
-        padding-right: 16px !important;
-        padding-left: 16px !important;
-    }
-}
-

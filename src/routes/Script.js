@@ -30,7 +30,9 @@ const useStyles = makeStyles((theme) => ({
     },
     container: {
         marginTop: '64px',
-        paddingTop: '10px'
+        paddingTop: '10px',
+        paddingLeft: '16px',
+        paddingRight: '16px'
     },
     highlightedButton: {
         border: '1px solid rgb(102, 187, 106)',
@@ -57,7 +59,7 @@ function Script(props) {
     return (
         <div>
             <main className={classes.content}>
-                <Container maxWidth={false} className={classes.container}>
+                <div className={classes.container}>
                     <Breadcrumbs aria-label="breadcrumb" className={classes.title}>
                         <Typography color="textPrimary">BEG {name}</Typography>
                     </Breadcrumbs>
@@ -123,7 +125,7 @@ function Script(props) {
                         </Carousel>*/}
                     </Box>}
                     {children}
-                </Container>
+                </div>
             </main>
         </div>
     );
