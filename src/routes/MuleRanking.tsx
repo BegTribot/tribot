@@ -25,7 +25,7 @@ function MuleRanking() {
             <TableCell align="left">{toKmb(stat.received, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.given, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.received - stat.given, true, true)}</TableCell>
-            <TableCell align="left">{msToString(stat.runtime, false, true)}</TableCell></>
+            <TableCell align="left">{msToString(stat.runtime, false, false)}</TableCell></>
     );
 
     const statsToRows = (stats: MuleStat[]) => stats.map((stat: MuleStat, index: number) => (
