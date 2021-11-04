@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     highlightedButton: {
         border: '1px solid rgb(102, 187, 106)',
     },
+    separator: {
+        width: 'calc(100vw - 290px)'
+    }
 }));
 
 const convertToKebabCase = (string) => {
@@ -95,7 +98,7 @@ function Script(props) {
                     </Button>
                     <ScriptDescription description={description}>
                     </ScriptDescription>
-                    <hr className="solid"/>
+                    <hr className={"solid " + classes.separator}/>
                     <ScriptFeatures features={features}/>
                     {demo && <Box margin={2}>
                         <Typography variant="h6" gutterBottom>
