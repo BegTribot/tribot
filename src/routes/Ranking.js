@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
     },
     container: {
         marginTop: '64px',
-        paddingTop: '10px'
+        paddingTop: '10px',
+        paddingLeft: '16px',
+        paddingRight: '16px'
     },
     button: {
         position: 'absolute',
@@ -40,7 +42,7 @@ function Ranking(props) {
     return (
         <div>
             <main className={classes.content}>
-                <Container maxWidth="lg" className={classes.container}>
+                <div className={classes.container}>
                     <Breadcrumbs aria-label="breadcrumb" className={classes.title}>
                         <Link color="inherit" href={"/tribot/scripts/" + link}>
                             {name}
@@ -63,7 +65,7 @@ function Ranking(props) {
                         Activate
                     </Button>}
                     {children}
-                </Container>
+                </div>
             </main>
         </div>
     );
