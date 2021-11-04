@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     viewRankingButton: {
         position: 'absolute',
-        right: '210px',
+        right: '205px',
         top: '75px'
     },
     threadButton: {
