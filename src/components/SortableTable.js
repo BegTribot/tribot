@@ -54,7 +54,7 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
                     <TableCell
                         key={header.id}
                         align={'left'}
-                        sortDirection={orderBy === header.id ? order : 'desc'}>
+                        sortDirection={orderBy === header.id ? order : false}>
                         <TableSortLabel
                             active={orderBy === header.id}
                             direction={orderBy === header.id ? order : 'desc'}
@@ -113,7 +113,7 @@ export default function SortableTable({headers, comparator = descendingComparato
     const [rowsPerPage, setRowsPerPage] = React.useState(5);*/
 
     const handleRequestSort = (event, property) => {
-        const isAsc = orderBy === property && order === 'asc';
+        const isAsc = orderBy !== property || order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
         setOrderBy(property);
     };
