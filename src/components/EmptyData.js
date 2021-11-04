@@ -19,8 +19,5 @@ export default function EmptyData() {
         <Typography d display="block" variant="h5" gutterBottom>
             No data
         </Typography>
-        {/*<Typography display="block"  variant="h7" gutterBottom>
-                    (disable adblock/brave protection)
-                </Typography>TODO*/}
     </Container>;
 }
