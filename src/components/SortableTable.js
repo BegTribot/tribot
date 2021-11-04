@@ -54,7 +54,7 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
                     <TableCell
                         key={header.id}
                         align={'left'}
-                        sortDirection={orderBy === header.id ? order : true}>
+                        sortDirection={orderBy === header.id ? order : 'desc'}>
                         <TableSortLabel
                             active={orderBy === header.id}
                             direction={orderBy === header.id ? order : 'desc'}
