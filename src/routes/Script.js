@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     threadButton: {
         position: 'absolute',
-        right: '27px',
+        right: '17px',
         top: '75px'
     },
     content: {
