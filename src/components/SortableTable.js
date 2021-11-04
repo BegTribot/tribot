@@ -57,7 +57,7 @@ function EnhancedTableHead({classes, order, orderBy, headers, onRequestSort}) {
                         sortDirection={orderBy === header.id ? order : false}>
                         <TableSortLabel
                             active={orderBy === header.id}
-                            direction={orderBy === header.id ? order : 'asc'}
+                            direction={orderBy === header.id ? order : 'desc'}
                             onClick={createSortHandler(header.id)}>
                             {header.label}
                             {orderBy === header.id ? (
