@@ -15,16 +15,14 @@ import Cooking from "../routes/Cooking";
 import CookingRanking from "../routes/CookingRanking";
 import SortableTable from "./SortableTable";
 import TableCell from "@material-ui/core/TableCell";
-import * as Utils from "../Utils";
-import Row from "./Row";
 import TableRow from "@material-ui/core/TableRow";
 
 const headers = [
-    { id: 'name', label: 'Dessert (100g serving)' },
-    { id: 'calories', label: 'Calories' },
-    { id: 'fat', label: 'Fat (g)' },
-    { id: 'carbs', label: 'Carbs (g)' },
-    { id: 'protein', label: 'Protein (g)', sort: (v) => 1 },
+    {id: 'name', label: 'Dessert (100g serving)'},
+    {id: 'calories', label: 'Calories'},
+    {id: 'fat', label: 'Fat (g)'},
+    {id: 'carbs', label: 'Carbs (g)'},
+    {id: 'protein', label: 'Protein (g)', sort: (v) => 1},
 ];
 
 const stats = [

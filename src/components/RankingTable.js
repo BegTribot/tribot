@@ -1,13 +1,4 @@
 import React, {useEffect} from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import TableCommonHeaders from "./TableCommonHeaders";
-import TableCell from "@material-ui/core/TableCell";
-import TableBody from "@material-ui/core/TableBody";
-import Table from "@material-ui/core/Table";
-import Paper from "@material-ui/core/Paper";
-import TableContainer from "@material-ui/core/TableContainer";
 import axios from "axios";
 import {SERVER} from "../App";
 import Loading from "./Loading";
@@ -15,8 +6,10 @@ import EmptyData from "./EmptyData";
 import Ranking from "../routes/Ranking";
 import SortableTable from "./SortableTable";
 
-export default function RankingTable({name, id, url, free = false, disabled = false, headers,
-                                         comparator = undefined, dataToRows}) {
+export default function RankingTable({
+                                         name, id, url, free = false, disabled = false, headers,
+                                         comparator = undefined, dataToRows
+                                     }) {
     const [isFetching, setFetching] = React.useState(true);
     const [stats, setStats] = React.useState([]);
 

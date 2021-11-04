@@ -28,8 +28,7 @@ function CorporealBeastRanking() {
         if (orderBy === 'profit') {
             aValue = a.lootValue - a.suppliesValue;
             bValue = b.lootValue - b.suppliesValue;
-        }
-        else {
+        } else {
             aValue = a[orderBy];
             bValue = b[orderBy];
         }
