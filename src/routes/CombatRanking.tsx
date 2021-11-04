@@ -32,26 +32,27 @@ function CombatRanking() {
                                   | 'experiences.defence'
                                   | 'experiences.ranged'
                                   | 'experiences.magic') => {
+        console.log(orderBy)
         let aValue, bValue;
         if (orderBy === 'experiences.attack') {
-            aValue = a.experiences.attack;
-            bValue = b.experiences.attack;
+            aValue = a.experiences.attack || 0;
+            bValue = b.experiences.attack || 0;
         }
         else if (orderBy === 'experiences.strength') {
-            aValue = b.experiences.strength;
-            bValue = b.experiences.strength;
+            aValue = a.experiences.strength || 0;
+            bValue = b.experiences.strength || 0;
         }
         else if (orderBy === 'experiences.defence') {
-            aValue = a.experiences.defence;
-            bValue = b.experiences.defence;
+            aValue = a.experiences.defence || 0;
+            bValue = b.experiences.defence || 0;
         }
         else if (orderBy === 'experiences.ranged') {
-            aValue = a.experiences.ranged;
-            bValue = b.experiences.ranged;
+            aValue = a.experiences.ranged || 0;
+            bValue = b.experiences.ranged || 0;
         }
         else if (orderBy === 'experiences.magic') {
-            aValue = a.experiences.magic;
-            bValue = b.experiences.magic;
+            aValue = a.experiences.magic || 0;
+            bValue = b.experiences.magic || 0;
         }
         else {
             aValue = a[orderBy];
