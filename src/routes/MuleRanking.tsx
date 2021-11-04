@@ -29,7 +29,7 @@ function MuleRanking() {
     );
 
     const statsToRows = (stats: MuleStat[]) => stats.map((stat: MuleStat, index: number) => (
-        <Row script={'beg mule'} rank={index + 1} stat={stat} statToRow={statToRow}/>
+        <Row key={index} script={'beg mule'} rank={index + 1} stat={stat} statToRow={statToRow}/>
     ));
 
     return (

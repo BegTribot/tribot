@@ -57,7 +57,7 @@ function Script(props) {
     return (
         <div>
             <main className={classes.content}>
-                <Container maxWidth="lg" className={classes.container}>
+                <Container maxWidth={false} className={classes.container}>
                     <Breadcrumbs aria-label="breadcrumb" className={classes.title}>
                         <Typography color="textPrimary">BEG {name}</Typography>
                     </Breadcrumbs>

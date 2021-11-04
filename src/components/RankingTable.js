@@ -38,19 +38,3 @@ export default function RankingTable({
         && <SortableTable headers={headers} comparator={comparator} rows={stats} dataToRows={dataToRows}/>}
     </Ranking>;
 }
-
-/*
-<TableContainer component={Paper} className={classes.tableContainer}>
-    <Table aria-label="collapsible table" size="small" className={classes.table}>
-        <TableHead>
-            <TableRow>
-                <TableCommonHeaders/>
-                {headers.map((stat, index) => <TableCell key={index} align="center">{stat}</TableCell>)}
-                <TableCell/>
-            </TableRow>
-        </TableHead>
-        <TableBody>
-            {statsToRows(stats)}
-        </TableBody>
-    </Table>
-</TableContainer>*/

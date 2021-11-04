@@ -28,7 +28,7 @@ function PohPlanksRanking() {
     );
 
     const statsToRows = (stats: PohPlankStat[]) => stats.map((stat: PohPlankStat, index: number) => (
-        <Row script={'beg poh planks'} rank={index + 1} stat={stat} statToRow={statToRow}/>
+        <Row key={index} rank={index + 1} script={'beg poh planks'} stat={stat} statToRow={statToRow}/>
     ));
 
     return (

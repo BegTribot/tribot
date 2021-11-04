@@ -3,7 +3,6 @@ import {withRouter} from 'react-router';
 import Script from "./Script";
 import Link from "@material-ui/core/Link";
 
-
 const description = <div>
     <div>
         All-in-one progressive Combat script.

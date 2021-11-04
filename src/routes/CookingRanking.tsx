@@ -37,7 +37,7 @@ function CookingRanking() {
     );
 
     const statsToRows = (stats: CookingStat[]) => stats.map((stat: CookingStat, index: number) => (
-        <Row rank={index + 1} script={'beg cooking'} stat={stat} statToRow={statToRow}/>
+        <Row key={index} rank={index + 1} script={'beg cooking'} stat={stat} statToRow={statToRow}/>
     ));
 
     return (

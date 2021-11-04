@@ -72,7 +72,7 @@ function CorporealBeastRanking() {
     ));
 
     const statsToRows = (stats: CorporealBeastStat[]) => stats.map((stat: CorporealBeastStat, index: number) =>
-        <Row rank={index + 1} script={'beg corporeal beast'} stat={stat} statToRow={statToRow}
+        <Row key={index} rank={index + 1} script={'beg corporeal beast'} stat={stat} statToRow={statToRow}
              subHeader={stat.uniques.length ? subHeaders : undefined}
              statToSubRow={stat.uniques.length ? statToSubRow : undefined}/>
     );
