@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/tribot/static/css/main.51522090.chunk.css",
-    "main.js": "/tribot/static/js/main.1db7f0bc.chunk.js",
-    "main.js.map": "/tribot/static/js/main.1db7f0bc.chunk.js.map",
+    "main.css": "/tribot/static/css/main.e973e052.chunk.css",
+    "main.js": "/tribot/static/js/main.71c5880b.chunk.js",
+    "main.js.map": "/tribot/static/js/main.71c5880b.chunk.js.map",
     "runtime-main.js": "/tribot/static/js/runtime-main.193273a0.js",
     "runtime-main.js.map": "/tribot/static/js/runtime-main.193273a0.js.map",
     "static/css/2.9abed3d3.chunk.css": "/tribot/static/css/2.9abed3d3.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.7b88084e.chunk.js.map": "/tribot/static/js/3.7b88084e.chunk.js.map",
     "index.html": "/tribot/index.html",
     "static/css/2.9abed3d3.chunk.css.map": "/tribot/static/css/2.9abed3d3.chunk.css.map",
-    "static/css/main.51522090.chunk.css.map": "/tribot/static/css/main.51522090.chunk.css.map",
+    "static/css/main.e973e052.chunk.css.map": "/tribot/static/css/main.e973e052.chunk.css.map",
     "static/js/2.b3ffb1f5.chunk.js.LICENSE.txt": "/tribot/static/js/2.b3ffb1f5.chunk.js.LICENSE.txt",
     "static/media/avatar.74de45f3.png": "/tribot/static/media/avatar.74de45f3.png",
     "static/media/corporeal-beast.720606f2.png": "/tribot/static/media/corporeal-beast.720606f2.png",
@@ -20,6 +20,7 @@
     "static/media/mule-execution1.85ce1a48.png": "/tribot/static/media/mule-execution1.85ce1a48.png",
     "static/media/mule-execution2.bd13be26.png": "/tribot/static/media/mule-execution2.bd13be26.png",
     "static/media/mule-execution3.b55fab1a.png": "/tribot/static/media/mule-execution3.b55fab1a.png",
+    "static/media/pohplanks-execution0.3da57210.png": "/tribot/static/media/pohplanks-execution0.3da57210.png",
     "static/media/pohplanks-execution1.c82bae39.png": "/tribot/static/media/pohplanks-execution1.c82bae39.png",
     "static/media/pohplanks-execution2.f2311b87.png": "/tribot/static/media/pohplanks-execution2.f2311b87.png",
     "static/media/pohplanks-execution3.851cc8c8.png": "/tribot/static/media/pohplanks-execution3.851cc8c8.png",
@@ -32,7 +33,7 @@
     "static/js/runtime-main.193273a0.js",
     "static/css/2.9abed3d3.chunk.css",
     "static/js/2.b3ffb1f5.chunk.js",
-    "static/css/main.51522090.chunk.css",
-    "static/js/main.1db7f0bc.chunk.js"
+    "static/css/main.e973e052.chunk.css",
+    "static/js/main.71c5880b.chunk.js"
   ]
 }
