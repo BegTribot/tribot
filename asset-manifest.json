@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tribot/static/css/main.e973e052.chunk.css",
-    "main.js": "/tribot/static/js/main.71c5880b.chunk.js",
-    "main.js.map": "/tribot/static/js/main.71c5880b.chunk.js.map",
+    "main.js": "/tribot/static/js/main.d4f86354.chunk.js",
+    "main.js.map": "/tribot/static/js/main.d4f86354.chunk.js.map",
     "runtime-main.js": "/tribot/static/js/runtime-main.193273a0.js",
     "runtime-main.js.map": "/tribot/static/js/runtime-main.193273a0.js.map",
     "static/css/2.9abed3d3.chunk.css": "/tribot/static/css/2.9abed3d3.chunk.css",
@@ -25,6 +25,8 @@
     "static/media/pohplanks-execution2.f2311b87.png": "/tribot/static/media/pohplanks-execution2.f2311b87.png",
     "static/media/pohplanks-execution3.851cc8c8.png": "/tribot/static/media/pohplanks-execution3.851cc8c8.png",
     "static/media/pohplanks-execution4.b6f77773.png": "/tribot/static/media/pohplanks-execution4.b6f77773.png",
+    "static/media/pohplanks-execution5.3f2e2d16.png": "/tribot/static/media/pohplanks-execution5.3f2e2d16.png",
+    "static/media/pohplanks-execution6.8e524387.png": "/tribot/static/media/pohplanks-execution6.8e524387.png",
     "static/media/styles.css": "/tribot/static/media/revicons.e8746a62.woff",
     "static/media/index.css": "/tribot/static/media/roboto-vietnamese-400-normal.52cebac0.woff2",
     "static/media/tribot.b5c782ac.png": "/tribot/static/media/tribot.b5c782ac.png"
@@ -34,6 +36,6 @@
     "static/css/2.9abed3d3.chunk.css",
     "static/js/2.b3ffb1f5.chunk.js",
     "static/css/main.e973e052.chunk.css",
-    "static/js/main.71c5880b.chunk.js"
+    "static/js/main.d4f86354.chunk.js"
   ]
 }
