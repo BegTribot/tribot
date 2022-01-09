@@ -1,10 +1,13 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import Script from "./Script";
+import execution0 from "../static/executions/pohplanks-execution0.png";
 import execution1 from "../static/executions/pohplanks-execution1.png";
 import execution2 from "../static/executions/pohplanks-execution2.png";
 import execution3 from "../static/executions/pohplanks-execution3.png";
 import execution4 from "../static/executions/pohplanks-execution4.png";
+import execution5 from "../static/executions/pohplanks-execution5.png";
+import execution6 from "../static/executions/pohplanks-execution6.png";
 
 const description = <div>
     <div>Turns logs into planks at the player-owned house by sending your
@@ -44,7 +47,7 @@ function PohPlanks() {
                    thread={'83668-beg-poh-planks-500k-1mh-muling-restocking'}
                    description={description}
                    features={features}
-                   executions={[execution1, execution2, execution3, execution4]}
+                   executions={[execution0, execution1, execution2, execution3, execution4, execution5, execution6]}
     />;
 }
 
