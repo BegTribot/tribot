@@ -8,7 +8,6 @@ import Row from "../components/Row";
 interface CombatStat {
     username: string,
     runtime: number,
-    kills: number,
     suppliesValue: number,
     lootValue: number,
     experiences: SkillExperience
