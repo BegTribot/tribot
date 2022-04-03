@@ -10,13 +10,36 @@ interface VyrewatchSentinelsStat {
     lootValue: number,
     suppliesValue: number,
     kills: number,
+    experiences: SkillExperience
     runtime: number
 }
 
+interface SkillExperience {
+    attack: number,
+    strength: number,
+    defence: number,
+    hitpoints: number
+}
+
 function VyrewatchSentinelsRanking() {
-    const comparator = (a: VyrewatchSentinelsStat, b: VyrewatchSentinelsStat, orderBy: keyof VyrewatchSentinelsStat | 'profit') => {
+    const comparator = (a: VyrewatchSentinelsStat, b: VyrewatchSentinelsStat,
+                        orderBy: keyof VyrewatchSentinelsStat
+                            | 'profit'
+                            | 'experiences.attack'
+                            | 'experiences.strength'
+                            | 'experiences.defence') => {
         let aValue, bValue;
-        if (orderBy === 'profit') {
+        if (orderBy === 'experiences.attack') {
+            aValue = a.experiences.attack || 0;
+            bValue = b.experiences.attack || 0;
+        } else if (orderBy === 'experiences.strength') {
+            aValue = a.experiences.strength || 0;
+            bValue = b.experiences.strength || 0;
+        } else if (orderBy === 'experiences.defence') {
+            aValue = a.experiences.defence || 0;
+            bValue = b.experiences.defence || 0;
+        }
+        else if (orderBy === 'profit') {
             aValue = a.lootValue - a.suppliesValue;
             bValue = b.lootValue - b.suppliesValue;
         } else {
@@ -37,6 +60,10 @@ function VyrewatchSentinelsRanking() {
         {id: 'loot', label: 'Loot'},
         {id: 'supplies', label: 'Supplies'},
         {id: 'profit', label: 'Profit'},
+        {id: 'suppliesValue', label: 'Supplies'},
+        {id: 'experiences.attack', label: 'Attack'},
+        {id: 'experiences.strength', label: 'Strength'},
+        {id: 'experiences.defence', label: 'Defence'},
         {id: 'runtime', label: 'Runtime'}
     ];
 
@@ -46,6 +73,13 @@ function VyrewatchSentinelsRanking() {
             <TableCell align="left">{toKmb(stat.lootValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.suppliesValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
+            <TableCell
+                align="left">{stat.experiences.attack && toKmb(stat.experiences.attack, true, true) || 0}</TableCell>
+            <TableCell
+                align="left">{stat.experiences.strength && toKmb(stat.experiences.strength, true, true) || 0}</TableCell>
+            <TableCell
+                align="left">{stat.experiences.defence && toKmb(stat.experiences.defence, true, true) || 0}</TableCell>
             <TableCell align="left">{msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
