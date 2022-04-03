@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/tribot/static/css/main.e973e052.chunk.css",
-    "main.js": "/tribot/static/js/main.d4f86354.chunk.js",
-    "main.js.map": "/tribot/static/js/main.d4f86354.chunk.js.map",
+    "main.css": "/tribot/static/css/main.7b0e91ae.chunk.css",
+    "main.js": "/tribot/static/js/main.28756dd2.chunk.js",
+    "main.js.map": "/tribot/static/js/main.28756dd2.chunk.js.map",
     "runtime-main.js": "/tribot/static/js/runtime-main.193273a0.js",
     "runtime-main.js.map": "/tribot/static/js/runtime-main.193273a0.js.map",
     "static/css/2.9abed3d3.chunk.css": "/tribot/static/css/2.9abed3d3.chunk.css",
-    "static/js/2.b3ffb1f5.chunk.js": "/tribot/static/js/2.b3ffb1f5.chunk.js",
-    "static/js/2.b3ffb1f5.chunk.js.map": "/tribot/static/js/2.b3ffb1f5.chunk.js.map",
+    "static/js/2.7f750fbd.chunk.js": "/tribot/static/js/2.7f750fbd.chunk.js",
+    "static/js/2.7f750fbd.chunk.js.map": "/tribot/static/js/2.7f750fbd.chunk.js.map",
     "static/js/3.7b88084e.chunk.js": "/tribot/static/js/3.7b88084e.chunk.js",
     "static/js/3.7b88084e.chunk.js.map": "/tribot/static/js/3.7b88084e.chunk.js.map",
     "index.html": "/tribot/index.html",
     "static/css/2.9abed3d3.chunk.css.map": "/tribot/static/css/2.9abed3d3.chunk.css.map",
-    "static/css/main.e973e052.chunk.css.map": "/tribot/static/css/main.e973e052.chunk.css.map",
-    "static/js/2.b3ffb1f5.chunk.js.LICENSE.txt": "/tribot/static/js/2.b3ffb1f5.chunk.js.LICENSE.txt",
+    "static/css/main.7b0e91ae.chunk.css.map": "/tribot/static/css/main.7b0e91ae.chunk.css.map",
+    "static/js/2.7f750fbd.chunk.js.LICENSE.txt": "/tribot/static/js/2.7f750fbd.chunk.js.LICENSE.txt",
     "static/media/avatar.74de45f3.png": "/tribot/static/media/avatar.74de45f3.png",
     "static/media/corporeal-beast.720606f2.png": "/tribot/static/media/corporeal-beast.720606f2.png",
     "static/media/discord.3849aaee.png": "/tribot/static/media/discord.3849aaee.png",
+    "static/media/guardians-rift.ad980680.png": "/tribot/static/media/guardians-rift.ad980680.png",
     "static/media/mule-execution1.85ce1a48.png": "/tribot/static/media/mule-execution1.85ce1a48.png",
     "static/media/mule-execution2.bd13be26.png": "/tribot/static/media/mule-execution2.bd13be26.png",
     "static/media/mule-execution3.b55fab1a.png": "/tribot/static/media/mule-execution3.b55fab1a.png",
@@ -29,13 +30,14 @@
     "static/media/pohplanks-execution6.8e524387.png": "/tribot/static/media/pohplanks-execution6.8e524387.png",
     "static/media/styles.css": "/tribot/static/media/revicons.e8746a62.woff",
     "static/media/index.css": "/tribot/static/media/roboto-vietnamese-400-normal.52cebac0.woff2",
-    "static/media/tribot.b5c782ac.png": "/tribot/static/media/tribot.b5c782ac.png"
+    "static/media/tribot.b5c782ac.png": "/tribot/static/media/tribot.b5c782ac.png",
+    "static/media/vyrewatch-sentinels.cdca5b44.png": "/tribot/static/media/vyrewatch-sentinels.cdca5b44.png"
   },
   "entrypoints": [
     "static/js/runtime-main.193273a0.js",
     "static/css/2.9abed3d3.chunk.css",
-    "static/js/2.b3ffb1f5.chunk.js",
-    "static/css/main.e973e052.chunk.css",
-    "static/js/main.d4f86354.chunk.js"
+    "static/js/2.7f750fbd.chunk.js",
+    "static/css/main.7b0e91ae.chunk.css",
+    "static/js/main.28756dd2.chunk.js"
   ]
 }
