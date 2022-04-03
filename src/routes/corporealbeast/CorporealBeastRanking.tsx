@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import * as Utils from "../../Utils";
+import {msToString, toKmb} from "../../utils";
 import RankingTable from "../../components/RankingTable";
 import Row from "../../components/Row";
 import BorderlessTableCell from "../../components/BorderlessTableCell";
@@ -50,10 +50,10 @@ function CorporealBeastRanking() {
 
     const statToRow = (stat: CorporealBeastStat) => (
         <>
-            <TableCell align="left">{Utils.toKmb(stat.kills, true, true)}</TableCell>
-            <TableCell align="left">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
-            <TableCell align="left">{Utils.toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
-            <TableCell align="left">{Utils.msToString(stat.runtime, false, false)}</TableCell>
+            <TableCell align="left">{toKmb(stat.kills, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.lootValue, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
+            <TableCell align="left">{msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
 
@@ -67,20 +67,19 @@ function CorporealBeastRanking() {
         <TableRow key={unique.item}>
             <BorderlessTableCell align="center">{unique.item}</BorderlessTableCell>
             <BorderlessTableCell align="center">{unique.quantity}</BorderlessTableCell>
-            <BorderlessTableCell align="center">{Utils.toKmb(unique.value, true, true)}</BorderlessTableCell>
+            <BorderlessTableCell align="center">{toKmb(unique.value, true, true)}</BorderlessTableCell>
         </TableRow>
     ));
 
     const statsToRows = (stats: CorporealBeastStat[]) => stats.map((stat: CorporealBeastStat, index: number) =>
-        <Row key={index} rank={index + 1} script={'beg corporeal beast'} stat={stat} statToRow={statToRow}
+        <Row key={index} rank={index + 1} script={'corporeal beast'} stat={stat} statToRow={statToRow}
              subHeader={stat.uniques.length ? subHeaders : undefined}
              statToSubRow={stat.uniques.length ? statToSubRow : undefined}/>
     );
 
     return (
         <RankingTable name={'Corporeal Beast'}
-                      id={'corporeal-beast'}
-                      url='/scripts/stats/beg corporeal beast'
+                      storeId={'corporeal-beast'}
                       headers={headers}
                       comparator={comparator}
                       dataToRows={statsToRows}/>

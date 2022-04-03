@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
-import * as Utils from "../../Utils";
+import {msToString, toKmb} from "../../utils";
 import RankingTable from "../../components/RankingTable";
 import Row from "../../components/Row";
 
@@ -27,24 +27,23 @@ function CookingRanking() {
 
     const statToRow = (stat: CookingStat) => (
         <>
-            <TableCell align="left">{Utils.toKmb(stat.experience, true, true)}</TableCell>
-            <TableCell align="left">{Utils.toKmb(stat.levels, true, true)}</TableCell>
-            <TableCell align="left">{Utils.toKmb(stat.amount, true, true)}</TableCell>
-            <TableCell align="left">{Utils.toKmb(stat.rawValue, true, true)}</TableCell>
-            <TableCell align="left">{Utils.toKmb(stat.cookedValue, true, true)}</TableCell>
-            <TableCell align="left">{Utils.msToString(stat.runtime, false, false)}</TableCell>
+            <TableCell align="left">{toKmb(stat.experience, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.levels, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.amount, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.rawValue, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.cookedValue, true, true)}</TableCell>
+            <TableCell align="left">{msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
 
     const statsToRows = (stats: CookingStat[]) => stats.map((stat: CookingStat, index: number) => (
-        <Row key={index} rank={index + 1} script={'beg cooking'} stat={stat} statToRow={statToRow}/>
+        <Row key={index} rank={index + 1} script={'cooking'} stat={stat} statToRow={statToRow}/>
     ));
 
     return (
         <RankingTable name={'Cooking'}
-                      id={'1760'}
+                      storeId={'1760'}
                       free
-                      url='/scripts/stats/beg cooking'
                       headers={headers}
                       dataToRows={statsToRows}/>
     );

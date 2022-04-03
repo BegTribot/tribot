@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
-import * as Utils from "../../Utils";
+import {msToString, toKmb} from "../../utils";
 import RankingTable from "../../components/RankingTable";
 import Row from "../../components/Row";
 
@@ -73,30 +73,29 @@ function CombatRanking() {
 
     const statToRow = (stat: CombatStat) => (
         <>
-            <TableCell align="left">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
-            <TableCell align="left">{Utils.toKmb(stat.suppliesValue, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.lootValue, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.suppliesValue, true, true)}</TableCell>
             <TableCell
-                align="left">{stat.experiences.attack && Utils.toKmb(stat.experiences.attack, true, true) || 0}</TableCell>
+                align="left">{stat.experiences.attack && toKmb(stat.experiences.attack, true, true) || 0}</TableCell>
             <TableCell
-                align="left">{stat.experiences.strength && Utils.toKmb(stat.experiences.strength, true, true) || 0}</TableCell>
+                align="left">{stat.experiences.strength && toKmb(stat.experiences.strength, true, true) || 0}</TableCell>
             <TableCell
-                align="left">{stat.experiences.defence && Utils.toKmb(stat.experiences.defence, true, true) || 0}</TableCell>
+                align="left">{stat.experiences.defence && toKmb(stat.experiences.defence, true, true) || 0}</TableCell>
             <TableCell
-                align="left">{stat.experiences.ranged && Utils.toKmb(stat.experiences.ranged, true, true) || 0}</TableCell>
+                align="left">{stat.experiences.ranged && toKmb(stat.experiences.ranged, true, true) || 0}</TableCell>
             <TableCell
-                align="left">{stat.experiences.magic && Utils.toKmb(stat.experiences.magic, true, true) || 0}</TableCell>
-            <TableCell align="left">{Utils.msToString(stat.runtime, false, false)}</TableCell>
+                align="left">{stat.experiences.magic && toKmb(stat.experiences.magic, true, true) || 0}</TableCell>
+            <TableCell align="left">{msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
 
     const statsToRows = (stats: CombatStat[], index: number) => stats.map((stat: CombatStat, index: number) => (
-        <Row key={index} rank={index + 1} script={'beg combat'} stat={stat} statToRow={statToRow}/>
+        <Row key={index} rank={index + 1} script={'combat'} stat={stat} statToRow={statToRow}/>
     ));
 
     return (
         <RankingTable name={'Combat'}
-                      id={'combat-trainer'}
-                      url='/scripts/stats/beg combat'
+                      storeId={'combat-trainer'}
                       headers={headers}
                       comparator={comparator}
                       dataToRows={statsToRows}/>

@@ -43,3 +43,7 @@ export function msToString(ms, upperCase, longFormat) {
     }
     return msString;
 }
+
+export function convertToKebabCase(string) {
+    return string.replace(/\s+/g, '-').toLowerCase();
+}

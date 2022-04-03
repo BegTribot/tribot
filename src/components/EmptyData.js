@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         width: 'calc(100vw - 305px)',
         marginTop: '40px',
+        marginLeft: '170px',
         padding: '20px 0 20px 0',
         textAlign: 'center'
     },
@@ -17,7 +18,7 @@ export default function EmptyData() {
     const classes = useStyles();
     return <Container className={classes.emptyDataContainer}>
         <Typography d display="block" variant="h5" gutterBottom>
-            No data
+            Unable to load the data...
         </Typography>
     </Container>;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
-import {msToString, toKmb} from "../../Utils";
+import {msToString, toKmb} from "../../utils";
 import RankingTable from "../../components/RankingTable";
 import Row from "../../components/Row";
 
@@ -28,13 +28,12 @@ function PohPlanksRanking() {
     );
 
     const statsToRows = (stats: PohPlankStat[]) => stats.map((stat: PohPlankStat, index: number) => (
-        <Row key={index} rank={index + 1} script={'beg poh planks'} stat={stat} statToRow={statToRow}/>
+        <Row key={index} rank={index + 1} script={'poh planks'} stat={stat} statToRow={statToRow}/>
     ));
 
     return (
         <RankingTable name='Poh Planks'
-                      id='poh-planks'
-                      url='/scripts/stats/beg poh planks'
+                      storeId='poh-planks'
                       headers={headers}
                       dataToRows={statsToRows}/>
     );

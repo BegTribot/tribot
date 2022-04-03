@@ -1,6 +1,6 @@
 import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
-import {msToString, toKmb} from "../../Utils";
+import {msToString, toKmb} from "../../utils";
 import RankingTable from "../../components/RankingTable";
 import Row from "../../components/Row";
 import {withRouter} from "react-router";
@@ -29,13 +29,12 @@ function MuleRanking() {
     );
 
     const statsToRows = (stats: MuleStat[]) => stats.map((stat: MuleStat, index: number) => (
-        <Row key={index} script={'beg mule'} rank={index + 1} stat={stat} statToRow={statToRow}/>
+        <Row key={index} script={'mule'} rank={index + 1} stat={stat} statToRow={statToRow}/>
     ));
 
     return (
         <RankingTable name='Mule'
-                      id='3654'
-                      url='/scripts/stats/beg mule'
+                      storeId='3654'
                       free
                       headers={headers}
                       dataToRows={statsToRows}/>

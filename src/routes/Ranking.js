@@ -1,11 +1,11 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import Container from "@material-ui/core/Container";
 import {withRouter} from 'react-router';
 import Link from "@material-ui/core/Link";
 import {Breadcrumbs} from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
+import {convertToKebabCase} from "../utils";
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -29,12 +29,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const convertToKebabCase = (string) => {
-    return string.replace(/\s+/g, '-').toLowerCase();
-}
-
 function Ranking(props) {
-    const {name, free, id, disabled, children} = props;
+    const {name, free, storeId, disabled, children} = props;
     const classes = useStyles();
 
     const link = convertToKebabCase(name);
@@ -51,14 +47,14 @@ function Ranking(props) {
                     </Breadcrumbs>
                     {!free &&
                     <Button variant="outlined" className={classes.button + ' highlighted-button'}
-                            href={"https://tribot.org/collections/osrs-scripts/products/beg-" + id}
+                            href={"https://tribot.org/collections/osrs-scripts/products/beg-" + storeId}
                             target={"_blank"}
                             disabled={disabled}>
                         Purchase
                     </Button>}
                     {free &&
                     <Button variant="outlined" className={classes.button + ' highlighted-button'}
-                            href={'https://repo.tribot.org/script/id/' + id}
+                            href={'https://repo.tribot.org/script/id/' + storeId}
                             target={"_blank"}
                             disabled={disabled}
                             color="success">

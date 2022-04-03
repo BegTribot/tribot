@@ -5,9 +5,10 @@ import Loading from "./Loading";
 import EmptyData from "./EmptyData";
 import Ranking from "../routes/Ranking";
 import SortableTable from "./SortableTable";
+import {convertToKebabCase} from "../utils";
 
 export default function RankingTable({
-                                         name, id, url, free = false, disabled = false, headers,
+                                         name, storeId, free = false, disabled = false, headers,
                                          comparator = undefined, dataToRows
                                      }) {
     const [isFetching, setFetching] = React.useState(true);
@@ -19,7 +20,7 @@ export default function RankingTable({
 
     const fetchData = () => {
         setFetching(true);
-        axios.get(SERVER + url)
+        axios.get(SERVER + '/scripts/stats/beg ' + name.toLowerCase())
             .then(response => {
                 setStats(response.data);
                 setFetching(false);
@@ -30,7 +31,7 @@ export default function RankingTable({
             });
     };
 
-    return <Ranking name={name} id={id} free={free} disabled={disabled}>
+    return <Ranking name={name} storeId={storeId} free={free} disabled={disabled}>
         {isFetching && <Loading/>}
         {!isFetching && stats.length === 0
         && <EmptyData/>}
