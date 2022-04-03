@@ -15,9 +15,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Box from "@material-ui/core/Box";
-import {withRouter} from "react-router";
 import PropTypes from "prop-types";
 import {AppBar, Tab, Tabs} from "@material-ui/core";
+import {withRouter} from "react-router";
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -177,32 +177,23 @@ function Home() {
         setValue(newValue);
     };
 
-
     return (
         <div>
             <main className={classes.content}>
-
                 <Box margin={2}>
                     <Typography variant="h6" gutterBottom>
-                        About me
-                    </Typography>
-                    Computer engineer and avid runescape player. In my free time I mix my two passions to develop
-                    good quality Old-School bot scripts.
-                </Box>
-                <Box margin={2}>
-                    <Typography variant="h6" gutterBottom>
-                        Planning the future
+                        Roadmap
                     </Typography>
                     <CustomizedTimeline/>
                 </Box>
+                <hr className={"solid"} style={{width: 'calc(100vw - 290px)'}}/>
                 <Box margin={2}>
                     <Typography variant="h6" gutterBottom>
                         Scripts
                     </Typography>
-
-
                     <AppBar position="static" className={classes.tabs}>
-                        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" fullWidth={true}
+                        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example"
+                              fullWidth={true}
                               centered
                               TabIndicatorProps={{style: {background: 'darkorange'}}}>
                             <CustomTab label="PvM" {...a11yProps(0)} />
@@ -215,43 +206,56 @@ function Home() {
                         </Tabs>
                     </AppBar>
                     <TabPanel value={value} index={0}>
-                        {[{name: "Corporeal Beast", completed: true}, {name: "The Nightmare", completed: false},
-                            {name: "Gwd bosses", completed: false}, {name: "Wilderness bosses", completed: false},
-                            {name: "Vorkath", completed: false}].map(boss =>
+                        {[
+                            {name: "Corporeal Beast", completed: true},
+                            {name: "The Nightmare", completed: false},
+                            {name: "Gwd bosses", completed: false},
+                            {name: "Wilderness bosses", completed: false},
+                            {name: "Vorkath", completed: false}
+                        ].map(boss =>
                             <Box margin={3}>
-                                {boss.completed && <CheckIcon style={{fill: "lightgreen"}}/>}
-                                {!boss.completed && <CloseIcon style={{fill: "orangered"}}/>} {boss.name}
+                                <CheckIcon style={{fill: boss.completed ? "lightgreen" : "orangered"}}/> {boss.name}
                             </Box>
                         )}
                     </TabPanel>
                     <TabPanel value={value} index={1}>
-                        <Box margin={3}>
-                            <CloseIcon style={{fill: "orangered"}}/> Strength/Attack/Defence
-                        </Box>
-                        {[{name: "Ranged", completed: false}, {name: "Prayer", completed: false},
-                            {name: "Magic", completed: false}, {name: "Runecraft", completed: false},
-                            {name: "Hitpoints", completed: false}, {name: "Crafting", completed: false},
-                            {name: "Mining", completed: false}, {name: "Smithing", completed: false},
-                            {name: "Fishing", completed: false}, {name: "Cooking", completed: true},
-                            {name: "Firemaking", completed: false}, {name: "Woodcutting", completed: false},
-                            {name: "Agility", completed: false}, {name: "Herblore", completed: false},
-                            {name: "Thieving", completed: false}, {name: "Fletching", completed: false},
-                            {name: "Slayer", completed: false}, {name: "Farming", completed: false},
-                            {name: "Construction", completed: false}, {name: "Hunter", completed: false}].map(skill =>
+                        {[
+                            {name: "Strength/Attack/Defence/Ranged/Magic/Hitpoints", completed: true},
+                            {name: "Prayer", completed: false},
+                            {name: "Runecraft", completed: false},
+                            {name: "Crafting", completed: false},
+                            {name: "Mining", completed: false},
+                            {name: "Smithing", completed: false},
+                            {name: "Fishing", completed: false},
+                            {name: "Cooking", completed: true},
+                            {name: "Firemaking", completed: false},
+                            {name: "Woodcutting", completed: false},
+                            {name: "Agility", completed: false},
+                            {name: "Herblore", completed: false},
+                            {name: "Thieving", completed: false},
+                            {name: "Fletching", completed: false},
+                            {name: "Slayer", completed: false},
+                            {name: "Farming", completed: false},
+                            {name: "Construction", completed: false},
+                            {name: "Hunter", completed: false}
+                        ].map(skill =>
                             <Box margin={3}>
-                                {skill.completed && <CheckIcon style={{fill: "lightgreen"}}/>}
-                                {!skill.completed && <CloseIcon style={{fill: "orangered"}}/>} {skill.name}
+                                <CheckIcon style={{fill: skill.completed ? "lightgreen" : "orangered"}}/> {skill.name}
                             </Box>
                         )}
                     </TabPanel>
                     <TabPanel value={value} index={2}>
-                        {[{name: "The Gauntlet", completed: false}, {name: "Barbarian Assault", completed: false},
+                        {[
+                            {name: "Guardian of the Rift", completed: true},
+                            {name: "The Gauntlet", completed: false},
+                            {name: "Barbarian Assault", completed: false},
                             {name: "Warrior Guild", completed: false},
-                            {name: "Pest Control", completed: false}, {name: "Soul Wars", completed: false},
-                            {name: "Tempoross", completed: false}].map(boss =>
+                            {name: "Pest Control", completed: false},
+                            {name: "Soul Wars", completed: false},
+                            {name: "Tempoross", completed: false}
+                        ].map(boss =>
                             <Box margin={3}>
-                                {boss.completed && <CheckIcon style={{fill: "lightgreen"}}/>}
-                                {!boss.completed && <CloseIcon style={{fill: "orangered"}}/>} {boss.name}
+                                <CheckIcon style={{fill: boss.completed ? "lightgreen" : "orangered"}}/> {boss.name}
                             </Box>
                         )}
                     </TabPanel>
@@ -261,13 +265,14 @@ function Home() {
                         </Box>
                     </TabPanel>
                     <TabPanel value={value} index={4}>
-                        {[{name: "Poh planks", completed: true}].map(skill =>
+                        {[
+                            {name: "Poh planks", completed: true},
+                            {name: "Vyrewatch sentinels", completed: true}
+                        ].map(skill =>
                             <Box margin={3}>
-                                {skill.completed && <CheckIcon style={{fill: "lightgreen"}}/>}
-                                {!skill.completed && <CloseIcon style={{fill: "orangered"}}/>} {skill.name}
+                                <CheckIcon style={{fill: skill.completed ? "lightgreen" : "orangered"}}/> {skill.name}
                             </Box>
                         )}
-
                     </TabPanel>
                     <TabPanel value={value} index={5}>
                         <Box margin={3}>
@@ -275,10 +280,12 @@ function Home() {
                         </Box>
                     </TabPanel>
                     <TabPanel value={value} index={6}>
-                        {[{name: "Mule", completed: true}, {name: "Utilities", completed: true}].map(skill =>
+                        {[
+                            {name: "Mule", completed: true},
+                            {name: "Utilities", completed: true}
+                        ].map(utilities =>
                             <Box margin={3}>
-                                {skill.completed && <CheckIcon style={{fill: "lightgreen"}}/>}
-                                {!skill.completed && <CloseIcon style={{fill: "orangered"}}/>} {skill.name}
+                                <CheckIcon style={{fill: utilities.completed ? "lightgreen" : "orangered"}}/> {utilities.name}
                             </Box>
                         )}
                     </TabPanel>

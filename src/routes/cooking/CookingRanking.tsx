@@ -1,9 +1,9 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
-import * as Utils from "../Utils";
-import RankingTable from "../components/RankingTable";
-import Row from "../components/Row";
+import * as Utils from "../../Utils";
+import RankingTable from "../../components/RankingTable";
+import Row from "../../components/Row";
 
 interface CookingStat {
     username: string,

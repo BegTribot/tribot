@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import Script from "./Script";
+import Script from "../Script";
 
 const description = <div>
     Contains some utility tasks to interact with my other scripts.

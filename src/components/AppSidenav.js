@@ -1,5 +1,5 @@
 import Toolbar from "@material-ui/core/Toolbar";
-import Routes from "../routes/Routes";
+import SidenavRoutes from "../routes/SidenavRoutes";
 import Drawer from "@material-ui/core/Drawer";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
@@ -30,7 +30,7 @@ export default function AppSidenav() {
                 paper: classes.drawerPaper,
             }}>
             <Toolbar/>
-            <Routes/>
+            <SidenavRoutes/>
         </Drawer>
     );
 }

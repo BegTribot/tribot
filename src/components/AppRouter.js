@@ -1,24 +1,42 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import CorporealBeast from "../routes/CorporealBeast";
+import CorporealBeast from "../routes/corporealbeast/CorporealBeast";
 import Home from "../routes/Home";
-import PohPlanks from "../routes/PohPlanks";
-import Mule from "../routes/Mule";
+import PohPlanks from "../routes/pohplanks/PohPlanks";
+import Mule from "../routes/mule/Mule";
 import AppSidenav from "./AppSidenav";
-import CorporealBeastRanking from "../routes/CorporealBeastRanking";
-import MuleRanking from "../routes/MuleRanking";
-import PohPlanksRanking from "../routes/PohPlanksRanking";
-import Utilities from "../routes/Utilities";
-import Combat from "../routes/Combat";
-import CombatRanking from "../routes/CombatRanking";
-import Cooking from "../routes/Cooking";
-import CookingRanking from "../routes/CookingRanking";
+import CorporealBeastRanking from "../routes/corporealbeast/CorporealBeastRanking";
+import MuleRanking from "../routes/mule/MuleRanking";
+import PohPlanksRanking from "../routes/pohplanks/PohPlanksRanking";
+import Utilities from "../routes/utilities/Utilities";
+import Combat from "../routes/combat/Combat";
+import CombatRanking from "../routes/combat/CombatRanking";
+import Cooking from "../routes/cooking/Cooking";
+import CookingRanking from "../routes/cooking/CookingRanking";
+import GuardiansRift from "../routes/guardiansrift/GuardiansRift";
+import VyrewatchSentinels from "../routes/vyrewatchsentinels/VyrewatchSentinels";
+import VyrewatchSentinelsRanking from "../routes/vyrewatchsentinels/VyrewatchSentinelsRanking";
+import GuardiansRiftRanking from "../routes/guardiansrift/GuardiansRiftRanking";
 
 export default function AppRouter() {
     return (
         <BrowserRouter basename='/tribot'>
             <AppSidenav/>
             <Switch>
+                <Route exact path={"/scripts/vyrewatch-sentinels"}>
+                    <VyrewatchSentinels/>
+                </Route>
+                <Route exact path={"/scripts/vyrewatch-sentinels/ranking"}>
+                    <VyrewatchSentinelsRanking/>
+                </Route>
+
+                <Route exact path={"/scripts/guardians-rift"}>
+                    <GuardiansRift/>
+                </Route>
+                <Route exact path={"/scripts/guardians-rift/ranking"}>
+                    <GuardiansRiftRanking/>
+                </Route>
+
                 <Route exact path={"/scripts/corporeal-beast"}>
                     <CorporealBeast/>
                 </Route>

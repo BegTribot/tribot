@@ -2,12 +2,12 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import * as Utils from "../Utils";
-import RankingTable from "../components/RankingTable";
-import Row from "../components/Row";
-import BorderlessTableCell from "../components/BorderlessTableCell";
+import * as Utils from "../../Utils";
+import RankingTable from "../../components/RankingTable";
+import Row from "../../components/Row";
+import BorderlessTableCell from "../../components/BorderlessTableCell";
 
-interface CorporealBeastStat {
+interface GuardiansRiftStat {
     username: string,
     lootValue: number,
     suppliesValue: number,
@@ -22,8 +22,8 @@ interface Unique {
     value: number
 }
 
-function CorporealBeastRanking() {
-    const comparator = (a: CorporealBeastStat, b: CorporealBeastStat, orderBy: keyof CorporealBeastStat | 'profit') => {
+function GuardiansRiftRanking() {
+    const comparator = (a: GuardiansRiftStat, b: GuardiansRiftStat, orderBy: keyof GuardiansRiftStat | 'profit') => {
         let aValue, bValue;
         if (orderBy === 'profit') {
             aValue = a.lootValue - a.suppliesValue;
@@ -48,7 +48,7 @@ function CorporealBeastRanking() {
         {id: 'runtime', label: 'Runtime'}
     ];
 
-    const statToRow = (stat: CorporealBeastStat) => (
+    const statToRow = (stat: GuardiansRiftStat) => (
         <>
             <TableCell align="left">{Utils.toKmb(stat.kills, true, true)}</TableCell>
             <TableCell align="left">{Utils.toKmb(stat.lootValue, true, true)}</TableCell>
@@ -63,7 +63,7 @@ function CorporealBeastRanking() {
         <TableCell align="left">Value</TableCell>
     </>;
 
-    const statToSubRow = (stat: CorporealBeastStat) => stat.uniques && stat.uniques.map((unique) => (
+    const statToSubRow = (stat: GuardiansRiftStat) => stat.uniques && stat.uniques.map((unique) => (
         <TableRow key={unique.item}>
             <BorderlessTableCell align="center">{unique.item}</BorderlessTableCell>
             <BorderlessTableCell align="center">{unique.quantity}</BorderlessTableCell>
@@ -71,7 +71,7 @@ function CorporealBeastRanking() {
         </TableRow>
     ));
 
-    const statsToRows = (stats: CorporealBeastStat[]) => stats.map((stat: CorporealBeastStat, index: number) =>
+    const statsToRows = (stats: GuardiansRiftStat[]) => stats.map((stat: GuardiansRiftStat, index: number) =>
         <Row key={index} rank={index + 1} script={'beg corporeal beast'} stat={stat} statToRow={statToRow}
              subHeader={stat.uniques.length ? subHeaders : undefined}
              statToSubRow={stat.uniques.length ? statToSubRow : undefined}/>
@@ -87,4 +87,4 @@ function CorporealBeastRanking() {
     );
 }
 
-export default withRouter(CorporealBeastRanking)
+export default withRouter(GuardiansRiftRanking)

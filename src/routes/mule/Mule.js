@@ -1,9 +1,9 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import Script from "./Script";
-import execution1 from "../static/executions/mule-execution1.png";
-import execution2 from "../static/executions/mule-execution2.png";
-import execution3 from "../static/executions/mule-execution3.png";
+import Script from "../Script";
+import execution1 from "../../static/executions/mule-execution1.png";
+import execution2 from "../../static/executions/mule-execution2.png";
+import execution3 from "../../static/executions/mule-execution3.png";
 
 const description = <div>
     Totally automated mule to help you secure your profits.

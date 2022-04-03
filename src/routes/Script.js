@@ -9,6 +9,9 @@ import Box from "@material-ui/core/Box";
 import ScriptDescription from "../components/ScriptDescription";
 import ScriptFeatures from "../components/ScriptFeatures";
 import Carousel from 'react-multi-carousel';
+import ScriptRequirements from "../components/ScriptRequirements";
+import ScriptRecommendations from "../components/ScriptRecommendations";
+import ScriptDemoGif from "../components/ScriptDemoGif";
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -54,7 +57,7 @@ const responsive = {
 };
 
 function Script(props) {
-    const {name, free, id, thread, disabled, noRanking, description, features, demo, executions, children} = props;
+    const {name, free, id, thread, disabled, noRanking, description, requirements, recommendations, features, demo, demoUrl, executions, children} = props;
     const classes = useStyles();
 
     const link = convertToKebabCase(name);
@@ -64,7 +67,7 @@ function Script(props) {
             <main className={classes.content}>
                 <div className={classes.container}>
                     <Breadcrumbs aria-label="breadcrumb" className={classes.title}>
-                        <Typography color="textPrimary">BEG {name}</Typography>
+                        <Typography class="title">BEG {name}</Typography>
                     </Breadcrumbs>
                     <Box margin={2}>
                         {!free &&
@@ -99,7 +102,10 @@ function Script(props) {
                     <ScriptDescription description={description}>
                     </ScriptDescription>
                     <hr className={"solid " + classes.separator}/>
+                    {requirements && <ScriptRequirements requirements={requirements}/>}
+                    {recommendations && <ScriptRecommendations recommendations={recommendations}/>}
                     <ScriptFeatures features={features}/>
+                    {demoUrl && <ScriptDemoGif url={demoUrl}/>}
                     {demo && <Box margin={2}>
                         <Typography variant="h6" gutterBottom>
                             Demo

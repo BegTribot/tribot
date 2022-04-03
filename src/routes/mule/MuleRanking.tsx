@@ -1,8 +1,8 @@
 import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
-import {msToString, toKmb} from "../Utils";
-import RankingTable from "../components/RankingTable";
-import Row from "../components/Row";
+import {msToString, toKmb} from "../../Utils";
+import RankingTable from "../../components/RankingTable";
+import Row from "../../components/Row";
 import {withRouter} from "react-router";
 
 interface MuleStat {

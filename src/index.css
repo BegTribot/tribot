@@ -25,8 +25,22 @@ hr.solid {
     border: 1px solid rgba(255, 255, 255, .1);
 }
 
-.feature-title {
+.title {
     color: #ff8f00;
+}
+
+.feature-title {
+    text-decoration: underline;
+}
+
+.reward-item-title {
+    text-decoration: underline;
+}
+
+.reward-item-icon-wrapper {
+    min-width: 40px;
+    display: inline-block;
+    text-align: center;
 }
 
 /*

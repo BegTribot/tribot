@@ -4,6 +4,9 @@ import React from "react";
 
 export default function ScriptFeatures({features}) {
     return <>
+        <Typography className={'title'}>
+            Features:
+        </Typography>
         {features.map(feature =>
             <>
                 {feature.title && <Box margin={2}>

@@ -1,7 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import Script from "./Script";
-import Link from "@material-ui/core/Link";
+import Script from "../Script";
 
 const description = <div>
     <div>
@@ -23,7 +22,7 @@ const features = [
     {
         title: 'Combat',
         features: [
-            'Supports active combat, passive combat and Nightmare Zone minigame.',
+            'Supports active combat (player actively choosing targets) and passive combat (standing still and let monsters attack you).',
             'Configurable fight square areas, fight polygon areas, fight spots and aggression reset spots.',
             'Highly configurable inventory and gear setup.',
             'Configurable levels and skill priorities.',
@@ -113,7 +112,6 @@ const features = [
                     'Fungicide spray for zygomites'
                 ]
             },
-            'Supports superior variants.'
         ]
     },
     {
@@ -123,37 +121,6 @@ const features = [
             'Sets the correct attack style to train the required skill.',
             'Changes attack options.',
             'Turns accept-aid off.'
-        ]
-    },
-    {
-        title: 'Grand exchange restock',
-        features: [
-            'Buys missing gear and supplies',
-            'Sells loot',
-            'Supports ring of wealth and varrock teleports',
-            'Customizable prices and amounts',
-            'Dynamic pricing based on runelite real-time prices and time waiting for offers to complete',
-            'Platinum tokens support'
-        ]
-    },
-    {
-        title: 'Muling',
-        features: [
-            {
-                feature: 'Mules on certain conditions:',
-                subfeatures: [
-                    'Time intervals.',
-                    'Time schedules.',
-                    'After a certain profit.'
-                ]
-            },
-            'Can sell loot on grand exchange before muling.',
-            'Can ask for missing gear.',
-            'Configurable coins, food and potions amount.',
-            <div>
-                Automated muling with cooperation with my <Link href={'/tribot/scripts/mule'}>Mule
-                script</Link>.
-            </div>,
         ]
     },
     {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import Link from "@material-ui/core/Link";
-import Script from "./Script";
+import Script from "../Script";
 
 const description = <div>
     <div>
