@@ -64,7 +64,8 @@ function GuardiansRiftRanking() {
         {id: 'catalyticPoints', label: 'Catalytic Points'},
         {id: 'rewardsClaimed', label: 'Rewards Claimed'},
         {id: 'runesCrafted', label: 'Runes Crafted'},
-        {id: 'profit', label: 'Profit'}
+        {id: 'profit', label: 'Profit'},
+        {id: 'runtime', label: 'Runtime'}
     ];
 
     const statToRow = (stat: GuardiansRiftStat) => (
