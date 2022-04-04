@@ -79,6 +79,7 @@ function GuardiansRiftRanking() {
             <TableCell align="left">{toKmb(stat.catalyticPoints, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.rewardsClaimed, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.runesCrafted, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.profit, true, true)}</TableCell>
             <TableCell align="left">{msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
