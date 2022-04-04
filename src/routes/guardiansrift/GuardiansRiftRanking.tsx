@@ -54,9 +54,9 @@ function GuardiansRiftRanking() {
     }
 
     const headers = [
+        {id: 'totalGames', label: 'Total Games'},
         {id: 'successGames', label: 'Success Games'},
         {id: 'defeatedGames', label: 'Defeated Games'},
-        {id: 'totalGames', label: 'Total Games'},
         {id: 'runecrafting', label: 'Runecrafting'},
         {id: 'mining', label: 'Mining'},
         {id: 'crafting', label: 'Crafting'},
@@ -70,9 +70,9 @@ function GuardiansRiftRanking() {
 
     const statToRow = (stat: GuardiansRiftStat) => (
         <>
+            <TableCell align="left">{toKmb(stat.successGames + stat.defeatedGames, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.successGames, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.defeatedGames, true, true)}</TableCell>
-            <TableCell align="left">{toKmb(stat.successGames + stat.defeatedGames, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.runecrafting.experience, true, true)} (+{toKmb(stat.runecrafting.levels, true, true)})</TableCell>
             <TableCell align="left">{toKmb(stat.mining.experience, true, true)} (+{toKmb(stat.mining.levels, true, true)})</TableCell>
             <TableCell align="left">{toKmb(stat.crafting.experience, true, true)} (+{toKmb(stat.crafting.levels, true, true)})</TableCell>
