@@ -56,7 +56,7 @@ function VyrewatchSentinelsRanking() {
     }
 
     const headers = [
-        {id: 'kills', label: 'Kills'},
+        //{id: 'kills', label: 'Kills'},
         {id: 'loot', label: 'Loot'},
         {id: 'supplies', label: 'Supplies'},
         {id: 'profit', label: 'Profit'},
@@ -67,9 +67,10 @@ function VyrewatchSentinelsRanking() {
         {id: 'runtime', label: 'Runtime'}
     ];
 
+    //<TableCell align="left">{toKmb(stat.kills, true, true)}</TableCell>
     const statToRow = (stat: VyrewatchSentinelsStat) => (
         <>
-            <TableCell align="left">{toKmb(stat.kills, true, true)}</TableCell>
+
             <TableCell align="left">{toKmb(stat.lootValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.suppliesValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
