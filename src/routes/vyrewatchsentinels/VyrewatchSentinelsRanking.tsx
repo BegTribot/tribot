@@ -56,25 +56,22 @@ function VyrewatchSentinelsRanking() {
     }
 
     const headers = [
-        //{id: 'kills', label: 'Kills'},
+        {id: 'kills', label: 'Kills'},
+        {id: 'profit', label: 'Profit'},
         {id: 'loot', label: 'Loot'},
         {id: 'supplies', label: 'Supplies'},
-        {id: 'profit', label: 'Profit'},
-        {id: 'suppliesValue', label: 'Supplies'},
         {id: 'experiences.attack', label: 'Attack'},
         {id: 'experiences.strength', label: 'Strength'},
         {id: 'experiences.defence', label: 'Defence'},
         {id: 'runtime', label: 'Runtime'}
     ];
 
-    //<TableCell align="left">{toKmb(stat.kills, true, true)}</TableCell>
     const statToRow = (stat: VyrewatchSentinelsStat) => (
         <>
-
+            <TableCell align="left">{toKmb(stat.kills, true, true)}</TableCell>
+            <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.lootValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.suppliesValue, true, true)}</TableCell>
-            <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
-            <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
             <TableCell
                 align="left">{stat.experiences.attack && toKmb(stat.experiences.attack, true, true) || 0}</TableCell>
             <TableCell

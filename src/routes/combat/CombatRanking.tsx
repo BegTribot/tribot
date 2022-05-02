@@ -8,6 +8,7 @@ import Row from "../../components/Row";
 interface CombatStat {
     username: string,
     runtime: number,
+    kills: number,
     suppliesValue: number,
     lootValue: number,
     experiences: SkillExperience
@@ -61,6 +62,7 @@ function CombatRanking() {
     }
 
     const headers = [
+        {id: 'kills', label: 'Kills'},
         {id: 'lootValue', label: 'Loot'},
         {id: 'suppliesValue', label: 'Supplies'},
         {id: 'experiences.attack', label: 'Attack'},
@@ -73,6 +75,7 @@ function CombatRanking() {
 
     const statToRow = (stat: CombatStat) => (
         <>
+            <TableCell align="left">{toKmb(stat.kills, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.lootValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.suppliesValue, true, true)}</TableCell>
             <TableCell
