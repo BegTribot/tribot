@@ -72,12 +72,9 @@ function VyrewatchSentinelsRanking() {
             <TableCell align="left">{toKmb(stat.lootValue - stat.suppliesValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.lootValue, true, true)}</TableCell>
             <TableCell align="left">{toKmb(stat.suppliesValue, true, true)}</TableCell>
-            <TableCell
-                align="left">{stat.experiences.attack && toKmb(stat.experiences.attack, true, true) || 0}</TableCell>
-            <TableCell
-                align="left">{stat.experiences.strength && toKmb(stat.experiences.strength, true, true) || 0}</TableCell>
-            <TableCell
-                align="left">{stat.experiences.defence && toKmb(stat.experiences.defence, true, true) || 0}</TableCell>
+            <TableCell align="left">{stat.experiences.attack && toKmb(stat.experiences.attack, true, true) || 0}</TableCell>
+            <TableCell align="left">{stat.experiences.strength && toKmb(stat.experiences.strength, true, true) || 0}</TableCell>
+            <TableCell align="left">{stat.experiences.defence && toKmb(stat.experiences.defence, true, true) || 0}</TableCell>
             <TableCell align="left">{msToString(stat.runtime, false, false)}</TableCell>
         </>
     );
