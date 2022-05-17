@@ -53,7 +53,7 @@ function CustomizedTimeline() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        Early/Mid 2021
+                        2021
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
@@ -73,7 +73,7 @@ function CustomizedTimeline() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        Mid/late 2021
+                        2022
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
@@ -92,7 +92,7 @@ function CustomizedTimeline() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        2022
+                        2023
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
@@ -111,7 +111,7 @@ function CustomizedTimeline() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        2022+
+                        2023+
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
