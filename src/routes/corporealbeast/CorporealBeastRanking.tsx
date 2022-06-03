@@ -58,9 +58,9 @@ function CorporealBeastRanking() {
     );
 
     const subHeaders = <>
-        <TableCell align="left">Item</TableCell>
-        <TableCell align="left">Quantity</TableCell>
-        <TableCell align="left">Value</TableCell>
+        <TableCell align="center">Unique</TableCell>
+        <TableCell align="center">Quantity</TableCell>
+        <TableCell align="center">Value</TableCell>
     </>;
 
     const statToSubRow = (stat: CorporealBeastStat) => stat.uniques && stat.uniques.map((unique) => (

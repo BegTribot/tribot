@@ -23,6 +23,11 @@ const useStyles = makeStyles({
     subTableTitle: {
         textAlign: 'center',
     },
+    expandButton: {
+        position: "absolute",
+        right: "3%",
+        marginTop: "3px"
+    }
 });
 
 export default function Row({
@@ -35,11 +40,11 @@ export default function Row({
         <TableRow className={classes.root}>
             <TableCommonCells script={script} rank={rank} username={stat.username}/>
             {statToRow(stat)}
-            {(subTitle || subHeader || statToSubRow) && <TableCell>
-                <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+            {(subTitle || subHeader || statToSubRow) &&
+                <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)} className={classes.expandButton}>
                     {open ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
                 </IconButton>
-            </TableCell>}
+          }
         </TableRow>
         {(subTitle || subHeader || statToSubRow) && <TableRow>
             <BorderlessTableCell variant="body" style={{paddingBottom: 0, paddingTop: 0}} colSpan={7}>
