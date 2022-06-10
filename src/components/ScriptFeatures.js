@@ -14,7 +14,10 @@ export default function ScriptFeatures({features}) {
                         {feature.title}
                     </Typography>
                 </Box>}
-                {feature.features && <Box margin={2}>
+                {feature.features && !(feature.features instanceof Array) && <Box margin={2}>
+                    {feature.features}
+                </Box>}
+                {feature.features && feature.features instanceof Array && <Box margin={2}>
                     <ul>
                         {feature.features.map((f, i1) =>
                             <li key={i1}>
