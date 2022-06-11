@@ -3,6 +3,7 @@ import {withRouter} from 'react-router';
 import Link from "@material-ui/core/Link";
 import Script from "../Script";
 import execution1 from "../../static/executions/corporeal-beast-execution1.png";
+import execution2 from "../../static/executions/corporeal-beast-execution2.png";
 
 const description = <>
     <div>
@@ -186,7 +187,7 @@ function CorporealBeast() {
                    description={description}
                    features={features}
                    requirements={requirements}
-                   executions={[execution1]}
+                   executions={[execution1, execution2]}
     />;
 }
 
