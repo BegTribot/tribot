@@ -18,7 +18,7 @@ export default function EmptyData() {
     const classes = useStyles();
     return <Container className={classes.emptyDataContainer}>
         <Typography d display="block" variant="h5" gutterBottom>
-            Unable to load the data...
+            Unable to load the data... Adblock might be blocking it
         </Typography>
     </Container>;
 }
