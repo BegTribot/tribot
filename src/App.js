@@ -6,7 +6,7 @@ import {CssBaseline} from "@material-ui/core";
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'react-multi-carousel/lib/styles.css';
 
-export const SERVER = 'https://dry-journey-46591.herokuapp.com/api'
+export const SERVER = 'https://scripts-webserver.onrender.com/api'
 //export const SERVER = 'http://localhost:8080/api'
 
 const darkTheme = createTheme({

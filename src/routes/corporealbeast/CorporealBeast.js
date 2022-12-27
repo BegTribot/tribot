@@ -183,7 +183,7 @@ const features = [
 function CorporealBeast() {
     return <Script name={'Corporeal Beast'}
                    id={'corporeal-beast'}
-                   thread={'84398-beg-corporeal-beast-soloteams-houses-configurable-ge-restock-muling'}
+                   thread={'84398-beg-corporeal-beast-soloteams-ironman-houses-configurable-ge-restock-muling'}
                    description={description}
                    features={features}
                    requirements={requirements}
